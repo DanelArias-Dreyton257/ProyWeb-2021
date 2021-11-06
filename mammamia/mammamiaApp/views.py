@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, get_list_or_404
+from .models import Pizza, Masa, Ingrediente
 
 # Create your views here.
 
@@ -35,7 +36,7 @@ def listaMasas(request):
     return render(request,'listaMasas.html', context)
 
 def detalleMasa(request, id_masa):
-    pizza = get_object_or_404(Masa, pk=id_masa)
+    masa = get_object_or_404(Masa, pk=id_masa)
 
     context = {
         'masa' :masa,
@@ -50,7 +51,7 @@ def listaIngredientes(request):
     return render(request,'listaIngredientes.html', context)
 
 def detalleIngrediente(request, id_ingrediente):
-    pizza = get_object_or_404(Ingrediente, pk=id_ingrediente)
+    ingrediente = get_object_or_404(Ingrediente, pk=id_ingrediente)
 
     context = {
         'ingrediente' :ingrediente,

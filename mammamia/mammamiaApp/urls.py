@@ -17,7 +17,7 @@ urlpatterns = [
     path('masas/<int:id_masa>', views.detalleMasa, name='detalle_masa'),
 
     #mammamia/ingredientes
-    path('masas', views.listaIngredientes, name='ingredientes'),
+    path('ingredientes', views.listaIngredientes, name='ingredientes'),
     #mammamia/masas/[id_ingrediente]
-    path('masas/<int:id_ingrediente>', views.detalleIngrediente, name='detalle_ingrediente'),
+    path('ingredientes/<int:id_ingrediente>', views.detalleIngrediente, name='detalle_ingrediente'),
 ]
