@@ -1,1 +1,11 @@
 {% extends "listaBase.html" %}
+
+{% block models %} masas {% endblock %}
+
+{% block listaItems %}
+  {% for masa in lista_masas %}
+    <li>
+      <a href="{% url 'detalle_masa' masa.id %}">{{masa.nombre}}</a>
+    </li>
+  {% endfor %}
+{% endblock %}

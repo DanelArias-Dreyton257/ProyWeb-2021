@@ -1,1 +1,24 @@
 {% extends "detalleBase.html" %}
+
+{% block nombre %}
+{{masa.nombre}}
+{% endblock %}
+
+{% block attrbItems %}
+  <li>grosor: {{masa.grosormm}} mm</li>
+  <li>harina: {{masa.tipoHarina}}</li>
+  <li>suplemento: +{{masa.supPrecio}}€</li>
+{% endblock %}
+
+{% block relLista %}
+Pizzas
+{% endblock %}
+
+{% block listaItems %}
+  {% for pizza in masa.pizza_set.all %}
+    <li>
+      <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}}</a>
+    </li>
+  {% endfor %}
+
+{% endblock %}

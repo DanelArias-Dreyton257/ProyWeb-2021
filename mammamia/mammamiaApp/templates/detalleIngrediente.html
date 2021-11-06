@@ -1,19 +1,23 @@
 {% extends "detalleBase.html" %}
 
-{% block content %}
+{% block nombre %}
+{{ingrediente.nombre}}
+{% endblock %}
 
-<h1>{{ingrediente.nombre}}</h1>
-<ul>
+{% block attrbItems %}
   <li>origen: {{ingrediente.origen}}</li>
-  <li>kcal: {{origen.kcal}} kcal por 100g</li>
-</ul>
-<h2>Lista Pizzas</h2>
-<ul>
+  <li>kcal: {{ingrediente.kcal}} kcal por 100g</li>
+{% endblock %}
+
+{% block relLista %}
+Pizzas
+{% endblock %}
+
+{% block listaItems %}
   {% for pizza in ingrediente.pizzas.all %}
     <li>
-      {{pizza.nombre}}
+      <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}}</a>
     </li>
   {% endfor %}
-</ul>
 
 {% endblock %}

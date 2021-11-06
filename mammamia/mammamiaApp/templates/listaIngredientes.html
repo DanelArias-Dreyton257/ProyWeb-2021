@@ -1,12 +1,11 @@
 {% extends "listaBase.html" %}
 
-{% block content %}
-<h1>Listado de ingredientes</h1>
-<ul>
+{% block models %} ingredientes {% endblock %}
+
+{% block listaItems %}
   {% for ingrediente in lista_ingredientes %}
     <li>
       <a href="{% url 'detalle_ingrediente' ingrediente.id %}">{{ingrediente.nombre}}</a>
     </li>
   {% endfor %}
-</ul>
 {% endblock %}

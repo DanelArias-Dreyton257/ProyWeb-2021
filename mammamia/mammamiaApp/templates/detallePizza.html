@@ -1,1 +1,23 @@
 {% extends "detalleBase.html" %}
+
+{% block nombre %}
+{{pizza.nombre}}
+{% endblock %}
+
+{% block attrbItems %}
+  <li>precio: {{pizza.precio}}€</li>
+  <li>tipo masa: {{pizza.masa.nombre}}</li>
+{% endblock %}
+
+{% block relLista %}
+Ingredientes
+{% endblock %}
+
+{% block listaItems %}
+  {% for ingrediente in pizza.ingredientes.all %}
+    <li>
+      <a href="{% url 'detalle_ingrediente' ingrediente.id %}">{{ingrediente.nombre}}</a>
+    </li>
+  {% endfor %}
+
+{% endblock %}

@@ -1,1 +1,11 @@
 {% extends "listaBase.html" %}
+
+{% block models %} pizzas {% endblock %}
+
+{% block listaItems %}
+  {% for pizza in lista_pizzas %}
+    <li>
+      <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}}</a>
+    </li>
+  {% endfor %}
+{% endblock %}

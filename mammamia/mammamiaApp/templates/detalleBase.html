@@ -1,1 +1,19 @@
 {% extends "base.html" %}
+
+{% block content %}
+
+<h1>{% block nombre %} {% endblock %}</h1>
+
+<ul>
+  {% block attrbItems %}
+  {% endblock %}
+</ul>
+
+<h2>Lista {% block relLista %}{% endblock %}</h2>
+
+<ul>
+  {% block listaItems %}
+  {% endblock %}
+</ul>
+
+{% endblock %}

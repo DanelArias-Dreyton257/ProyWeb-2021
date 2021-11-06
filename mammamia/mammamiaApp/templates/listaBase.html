@@ -1,1 +1,9 @@
 {% extends "base.html" %}
+
+{% block content %}
+<h1>Lista de {% block models %}{% endblock %}</h1>
+<ul>
+  {% block listaItems %}
+  {%endblock%}
+</ul>
+{% endblock %}
