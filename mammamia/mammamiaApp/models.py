@@ -4,7 +4,7 @@ from django.db import models
 
 class Masa(models.Model):
     nombre = models.CharField(max_length=50)
-    grosormm = models.IntegerField(min_value=1)
+    grosormm = models.IntegerField()
     tipoHarina = models.CharField(max_length=50)
     supPrecio = models.DecimalField(decimal_places=2, default=0)
 
