@@ -1,1 +1,19 @@
 {% extends "detalleBase.html" %}
+
+{% block content %}
+
+<h1>{{ingrediente.nombre}}</h1>
+<ul>
+  <li>origen: {{ingrediente.origen}}</li>
+  <li>kcal: {{origen.kcal}} kcal por 100g</li>
+</ul>
+<h2>Lista Pizzas</h2>
+<ul>
+  {% for pizza in ingrediente.pizzas.all %}
+    <li>
+      {{pizza.nombre}}
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
