@@ -18,6 +18,8 @@ Ingredientes
     <li>
       <a href="{% url 'detalle_ingrediente' ingrediente.id %}">{{ingrediente.nombre}}</a>
     </li>
+  {% empty %}
+    <p>No se han encontrado ingredientes.</p>
   {% endfor %}
 
 {% endblock %}

@@ -11,6 +11,8 @@ Mamma Mia
     <li>
       <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}} (A solo {{pizza.precio}}€ !)</a>
     </li>
+  {% empty %}
+  <p>No se han encontrado pizzas.</p>
   {% endfor %}
 </ul>
 {% endblock %}

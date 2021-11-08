@@ -7,5 +7,7 @@
     <li>
       <a href="{% url 'detalle_masa' masa.id %}">{{masa.nombre}}</a>
     </li>
+  {% empty %}
+      <p>No se han encontrado masas</p>
   {% endfor %}
 {% endblock %}
