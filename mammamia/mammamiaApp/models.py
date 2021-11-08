@@ -9,7 +9,7 @@ class Masa(models.Model):
     supPrecio = models.DecimalField(decimal_places=2, default=0, max_digits=4)
 
     def __str__(self):
-        return "{}".format(self.nombre)
+        return "{} (+{}€)".format(self.nombre, self.supPrecio)
 
 class Ingrediente(models.Model):
     nombre = models.CharField(max_length=50)
@@ -30,4 +30,4 @@ class Pizza(models.Model):
     #Falta ingredientes -Mirar como hacer tablas n a m
 
     def __str__(self):
-        return "{}".format(self.nombre)
+        return "{} ({}€)".format(self.nombre, self.precio)
