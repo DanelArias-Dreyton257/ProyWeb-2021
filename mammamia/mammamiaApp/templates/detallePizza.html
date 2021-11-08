@@ -6,7 +6,7 @@
 
 {% block attrbItems %}
   <li>precio: {{pizza.precio}}€</li>
-  <li>tipo masa: {{pizza.masa.nombre}}</li>
+  <li>tipo masa:<a href="{% url 'detalle_masa' pizza.masa.id %}">{{pizza.masa.nombre}}</a></li>
 {% endblock %}
 
 {% block relLista %}
