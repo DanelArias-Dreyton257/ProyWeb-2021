@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+
+{% block title %}
+Mamma Mia
+{% endblock %}
+
+{% block content %}
+<h1>Compra nuestras pizzas!!</h1>
+<ul>
+  {% for pizza in lista_pizzas %}
+    <li>
+      <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}} (A solo {{pizza.precio}}€ !)</a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

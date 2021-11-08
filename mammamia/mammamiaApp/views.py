@@ -5,10 +5,11 @@ from .models import Pizza, Masa, Ingrediente
 
 def portada(request):
     #TODO
-    #lista = get_list_or_404(Pizza)
+    lista = get_list_or_404(Pizza.objects.order_by('precio'))
     #pizza = get_object_or_404(Pizza, pk=id_pizza)
     context = {
        #Anyadir lo que se necesite
+       'lista_pizzas': lista,
     }
     return render(request,'portada.html', context)
 
