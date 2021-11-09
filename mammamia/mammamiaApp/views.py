@@ -5,11 +5,22 @@ from .models import Pizza, Masa, Ingrediente
 
 def portada(request):
     #TODO
-    lista = get_list_or_404(Pizza.objects.order_by('precio'))
+    #lista = get_list_or_404(Pizza.objects.order_by('precio'))
     #pizza = get_object_or_404(Pizza, pk=id_pizza)
+    lista_m = get_list_or_404(Masa)
+    lista_min_p = []
+    for masa in lista_m:
+        minPrecio = masa.pizza_set.all()[0].precio
+        minPizza = masa.pizza_set.all()[0]
+        for pizza in masa.pizza_set.all():
+            if (pizza.precio <= minPrecio):
+                minPrecio = pizza.precio
+                minPizza = pizza
+        lista_min_p.append(minPizza)
+
     context = {
        #Anyadir lo que se necesite
-       'lista_pizzas': lista,
+       'lista_min_p' : lista_min_p,
     }
     return render(request,'portada.html', context)
 

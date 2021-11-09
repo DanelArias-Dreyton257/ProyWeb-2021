@@ -7,12 +7,12 @@ Mamma Mia
 {% block content %}
 <h1>Compra nuestras pizzas!!</h1>
 <ul>
-  {% for pizza in lista_pizzas %}
-    <li>
-      <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}} (A solo {{pizza.precio}}€ !)</a>
-    </li>
+  {% for pizza in lista_min_p %}
+  <li>
+    <b>{{pizza.masa.nombre}}</b>: {{pizza.nombre}}(Por solo {{pizza.precio}}€ !!)
+  </li>
   {% empty %}
-  <p>No se han encontrado pizzas.</p>
+  <p>No se han encontrado masas.</p>
   {% endfor %}
 </ul>
 {% endblock %}

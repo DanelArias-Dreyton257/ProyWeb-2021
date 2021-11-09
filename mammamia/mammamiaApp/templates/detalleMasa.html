@@ -17,7 +17,7 @@ Pizzas
 {% block listaItems %}
   {% for pizza in masa.pizza_set.all %}
     <li>
-      <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}}</a>
+      <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}} ({{pizza.precio}}€)</a>
     </li>
   {% empty %}
       <p>No se han encontrado pizzas</p>
