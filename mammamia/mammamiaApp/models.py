@@ -31,3 +31,6 @@ class Pizza(models.Model):
 
     def __str__(self):
         return "{} ({}€)".format(self.nombre, self.precio)
+
+    def __lt__(self, other):
+        return self.precio < other.precio
