@@ -16,9 +16,6 @@ def portada(request):
     }
     return render(request,'portada.html', context)
 
-def base(request):
-    return render(request,'base.html')
-
 def listaPizzas(request):
     lista = get_list_or_404(Pizza)
 
