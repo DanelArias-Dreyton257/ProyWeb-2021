@@ -5,11 +5,12 @@ Mamma Mia
 {% endblock %}
 
 {% block content %}
+
 <h1>Compra nuestras pizzas!!</h1>
 <ul>
   {% for pizza in lista_min_p %}
   <li>
-    <b>{{pizza.masa.nombre}}</b>: {{pizza.nombre}}(Por solo {{pizza.precio}}€ !!)
+    <b>{{pizza.masa.nombre}}</b>: {{pizza.nombre}} (Por solo {{pizza.precio}}€ !!)
   </li>
   {% empty %}
   <p>No se han encontrado masas.</p>

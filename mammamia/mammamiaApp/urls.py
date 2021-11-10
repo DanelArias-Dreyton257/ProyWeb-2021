@@ -5,7 +5,8 @@ from . import views
 urlpatterns = [
     #mammamia/home
     path('home', views.portada, name='portada'),
-
+    
+    path('base', views.base, name='base'),
     #mammamia/pizzas
     path('pizzas', views.listaPizzas, name='pizzas'),
     #mammamia/pizzas/[id_pizza]
