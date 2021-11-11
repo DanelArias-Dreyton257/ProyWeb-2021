@@ -6,24 +6,13 @@ Mamma Mia
 
 {% block content %}
 
-<h1>Compra nuestras pizzas!!</h1>
-<ul>
-  {% for pizza in lista_min_p %}
-  <li>
-    <b>{{pizza.masa.nombre}}</b>: {{pizza.nombre}} (Por solo {{pizza.precio}}€ !!)
-  </li>
-  {% empty %}
-  <p>No se han encontrado masas.</p>
-  {% endfor %}
-</ul>
-
 <div class="tm-section-2">
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <h2 class="tm-section-title">We are here to help you?</h2>
-        <p class="tm-color-white tm-section-subtitle">Subscribe to get our newsletters</p>
-        <a href="#" class="tm-color-white tm-btn-white-bordered">Subscribe Newletters</a>
+        <h2 class="tm-section-title">Las mejores pizzas al mejor precio</h2>
+        <p class="tm-color-white tm-section-subtitle">Pizzas de todos los sabores para todos los gustos</p>
+        <a href="#" class="tm-color-white tm-btn-white-bordered">Ver más</a>
       </div>
     </div>
   </div>
@@ -36,42 +25,22 @@ Mamma Mia
   </svg>
   <div class="container tm-pt-5 tm-pb-4">
     <div class="row text-center">
+
+      {% for pizza in lista_min_p %}
+
       <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
         <i class="fa tm-fa-6x fa-legal tm-color-primary tm-margin-b-20"></i>
-        <h3 class="tm-color-primary tm-article-title-1">Level HTML Template by Tooplate website</h3>
-        <p>You are allowed to download, edit and use this template for your business or client websites.</p>
-        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
+        <h3 class="tm-color-primary tm-article-title-1">Masa {{pizza.masa.nombre}}</h3>
+        <p>{{pizza.nombre}} (Por solo {{pizza.precio}}€ !!)</p>
+        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Ver más pizzas con esta masa</a>
+
       </article>
-      <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
-        <i class="fa tm-fa-6x fa-plane tm-color-primary tm-margin-b-20"></i>
-        <h3 class="tm-color-primary tm-article-title-1">Original Website Template Producer</h3>
-        <p>You are NOT allowed to re-distribute the downloadable template ZIP file on any website.</p>
-        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-      </article>
-      <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
-        <i class="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20"></i>
-        <h3 class="tm-color-primary tm-article-title-1">Contact us if you have any question</h3>
-        <p>If you see this template being distributed on any other site, that is an illegal copy.</p>
-        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-      </article>
-      <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
-        <i class="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20"></i>
-        <h3 class="tm-color-primary tm-article-title-1">Contact us if you have any question</h3>
-        <p>If you see this template being distributed on any other site, that is an illegal copy.</p>
-        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-      </article>
-      <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
-        <i class="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20"></i>
-        <h3 class="tm-color-primary tm-article-title-1">Contact us if you have any question</h3>
-        <p>If you see this template being distributed on any other site, that is an illegal copy.</p>
-        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-      </article>          
-      <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
-        <i class="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20"></i>
-        <h3 class="tm-color-primary tm-article-title-1">Contact us if you have any question</h3>
-        <p>If you see this template being distributed on any other site, that is an illegal copy.</p>
-        <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-      </article>
+
+      {% empty %}
+      <p>No se han encontrado masas.</p>
+      {% endfor %}
+
+
     </div>
   </div>
 </div>
