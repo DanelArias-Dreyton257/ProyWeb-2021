@@ -11,7 +11,7 @@ urlpatterns = [
     path('pizzas/<int:id_pizza>', views.detallePizza,name='detalle_pizza'),
 
     #mammamia/masas
-    path('masas', views.listaMasas, name='masa'),
+    path('masas', views.listaMasas, name='masas'),
     #mammamia/masas/[id_masa]
     path('masas/<int:id_masa>', views.detalleMasa, name='detalle_masa'),
 
