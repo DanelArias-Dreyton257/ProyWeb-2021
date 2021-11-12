@@ -1,11 +1,12 @@
 {% extends "listaBase.html" %}
+{% load static %}
 
 {% block models %} masas {% endblock %}
 
 {% block listaItems %}
   {% for masa in lista_masas %}
   <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
-    <i class="fa tm-fa-6x fa-legal tm-color-primary tm-margin-b-20"></i>
+    <img src="{% static 'img/' %}masa-{{masa.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">
     <h3 class="tm-color-primary tm-article-title-1">{{masa.nombre}}</h3>
     <p>Suplemento de +{{masa.supPrecio}}€</p>
     <a href="{% url 'detalle_masa' masa.id %}" class="text-uppercase tm-color-primary tm-font-semibold">Ver más</a>

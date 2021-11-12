@@ -13,7 +13,7 @@
         <div class="tm-article-carousel">
 
           <article class="tm-bg-white mr-2 tm-carousel-item">
-            <img src="{% static 'img/img-01.jpg' %}" alt="Image" class="img-fluid">
+            {% block mainImg %}{% endblock %}
             <div class="tm-article-pad">
               <header>
                 <h3 class="text-uppercase tm-article-title-2">{% block nombre %}{% endblock %}</h3>

@@ -5,6 +5,8 @@
 {{pizza.nombre}}
 {% endblock %}
 
+{% block mainImg %}<img src="{% static 'img/' %}pizza-{{pizza.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">{% endblock %}
+
 {% block attrbItems %}
   <li>precio: {{pizza.precio}}€</li>
   <li>tipo masa:<a href="{% url 'detalle_masa' pizza.masa.id %}">{{pizza.masa.nombre}}</a></li>

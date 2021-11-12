@@ -5,6 +5,8 @@
 {{masa.nombre}}
 {% endblock %}
 
+{% block mainImg %}<img src="{% static 'img/' %}masa-{{masa.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">{% endblock %}
+
 {% block attrbItems %}
   <li>grosor: {{masa.grosormm}} mm</li>
   <li>harina: {{masa.tipoHarina}}</li>
