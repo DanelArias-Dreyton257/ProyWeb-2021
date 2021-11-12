@@ -1,19 +1,52 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block tit_trian %}Las mejores pizzas al mejor precio{% endblock %}
+{% block subtit_trian %}Pizzas de todos los sabores para todos los gustos{% endblock %}
 
 {% block content %}
 
-<h1>{% block nombre %} {% endblock %}</h1>
+<div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+        <div class="tm-article-carousel">
 
-<ul>
-  {% block attrbItems %}
-  {% endblock %}
-</ul>
+          <article class="tm-bg-white mr-2 tm-carousel-item">
+            <img src="{% static 'img/img-01.jpg' %}" alt="Image" class="img-fluid">
+            <div class="tm-article-pad">
+              <header>
+                <h3 class="text-uppercase tm-article-title-2">{% block nombre %}{% endblock %}</h3>
+              </header>
+              <ul>
+                {% block attrbItems %}
+                {% endblock %}
+              </ul>
 
-<h2>Lista {% block relLista %}{% endblock %}</h2>
+              <a href="" class="text-uppercase btn-primary tm-btn-primary">Ver mas</a>
 
-<ul>
-  {% block listaItems %}
-  {% endblock %}
-</ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
+
+      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-recommended-container">
+        <div class="tm-bg-white">
+          <div class="tm-bg-primary tm-sidebar-pad">
+            <h3 class="tm-color-white tm-sidebar-title">Lista {% block relLista %}{% endblock %}</h3>
+            <p class="tm-color-white tm-margin-b-0 tm-font-light">{% block listaDesc %}{% endblock %}</p>
+          </div>
+          <div class="tm-sidebar-pad-2">
+              {% block listaItems %}
+              {% endblock %}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
 
 {% endblock %}

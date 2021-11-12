@@ -1,4 +1,5 @@
 {% extends "detalleBase.html" %}
+{% load static %}
 
 {% block nombre %}
 {{masa.nombre}}
@@ -14,13 +15,20 @@
 Pizzas
 {% endblock %}
 
+{% block listaDesc %}
+Descubre que pizzas tenemos con esta masa.
+{% endblock %}
+
 {% block listaItems %}
   {% for pizza in masa.pizza_set.all %}
-    <li>
-      <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}} ({{pizza.precio}}€)</a>
-    </li>
+  <a href="{% url 'detalle_pizza' pizza.id %}" class="media tm-media tm-recommended-item">
+    <img src="{% static 'img/tn-img-01.jpg' %}" alt="Image">
+    <div class="media-body tm-media-body tm-bg-gray">
+      <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{{pizza.nombre}} ({{pizza.precio}}€)</h4>
+    </div>
+  </a>
   {% empty %}
-      <p>No se han encontrado pizzas</p>
+    <p>No se han encontrado pizzas.</p>
   {% endfor %}
 
 {% endblock %}

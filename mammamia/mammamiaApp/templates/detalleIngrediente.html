@@ -1,4 +1,5 @@
 {% extends "detalleBase.html" %}
+{% load static %}
 
 {% block nombre %}
 {{ingrediente.nombre}}
@@ -13,13 +14,20 @@
 Pizzas
 {% endblock %}
 
+{% block listaDesc %}
+Disfruta del sabor de este ingrediente con estas pizzas.
+{% endblock %}
+
 {% block listaItems %}
   {% for pizza in ingrediente.pizzas.all %}
-    <li>
-      <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}}</a>
-    </li>
+    <a href="{% url 'detalle_pizza' pizza.id %}" class="media tm-media tm-recommended-item">
+      <img src="{% static 'img/tn-img-01.jpg' %}" alt="Image">
+      <div class="media-body tm-media-body tm-bg-gray">
+        <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{{pizza.nombre}} ({{pizza.precio}}€)</h4>
+      </div>
+    </a>
   {% empty %}
-    <p>No se han encontrado pizzas</p>
+    <p>No se han encontrado pizzas.</p>
   {% endfor %}
 
 {% endblock %}

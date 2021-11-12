@@ -1,4 +1,5 @@
 {% extends "detalleBase.html" %}
+{% load static %}
 
 {% block nombre %}
 {{pizza.nombre}}
@@ -13,13 +14,20 @@
 Ingredientes
 {% endblock %}
 
+{% block listaDesc %}
+Descubre de que esta hecha esta pizza.
+{% endblock %}
+
 {% block listaItems %}
   {% for ingrediente in pizza.ingredientes.all %}
-    <li>
-      <a href="{% url 'detalle_ingrediente' ingrediente.id %}">{{ingrediente.nombre}}</a>
-    </li>
-  {% empty %}
-    <p>No se han encontrado ingredientes.</p>
-  {% endfor %}
+  <a href="{% url 'detalle_ingrediente' ingrediente.id %}" class="media tm-media tm-recommended-item">
+    <img src="{% static 'img/tn-img-01.jpg' %}" alt="Image">
+    <div class="media-body tm-media-body tm-bg-gray">
+      <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{{ingrediente.nombre}}</h4>
+    </div>
+  </a>
+{% empty %}
+  <p>No se han encontrado ingredientes.</p>
+{% endfor %}
 
 {% endblock %}
