@@ -21,7 +21,7 @@ Descubre de que esta hecha esta pizza.
 {% block listaItems %}
   {% for ingrediente in pizza.ingredientes.all|dictsort:"nombre" %}
   <a href="{% url 'detalle_ingrediente' ingrediente.id %}" class="media tm-media tm-recommended-item">
-    <img src="{% static 'img/tn-img-01.jpg' %}" alt="Image">
+    <img src="{% static 'img/' %}ingrediente-{{ingrediente.nombre|lower}}.jpg" width=40% alt="Image">
     <div class="media-body tm-media-body tm-bg-gray">
       <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{{ingrediente.nombre}}</h4>
     </div>
