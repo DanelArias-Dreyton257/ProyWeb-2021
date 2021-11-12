@@ -17,12 +17,25 @@ def portada(request):
     return render(request,'portada.html', context)
 
 def listaPizzas(request):
-    lista = get_list_or_404(Pizza)
-
+    lista = get_list_or_404(Pizza.objects.all().order_by('nombre'))
     context = {
         'lista_pizzas': lista,
     }
     return render(request,'listaPizzas.html', context)
+
+def listaMasas(request):
+    lista = get_list_or_404(Masa.objects.all().order_by('nombre'))
+    context = {
+        'lista_masas': lista,
+    }
+    return render(request,'listaMasas.html', context)
+
+def listaIngredientes(request):
+    lista = get_list_or_404(Ingrediente.objects.all().order_by('nombre'))
+    context = {
+        'lista_ingredientes': lista,
+    }
+    return render(request,'listaIngredientes.html', context)
 
 def detallePizza(request, id_pizza):
     pizza = get_object_or_404(Pizza, pk=id_pizza)
@@ -32,13 +45,6 @@ def detallePizza(request, id_pizza):
     }
     return render(request,'detallePizza.html', context)
 
-def listaMasas(request):
-    lista = get_list_or_404(Masa)
-    context = {
-        'lista_masas': lista,
-    }
-    return render(request,'listaMasas.html', context)
-
 def detalleMasa(request, id_masa):
     masa = get_object_or_404(Masa, pk=id_masa)
 
@@ -46,13 +52,6 @@ def detalleMasa(request, id_masa):
         'masa' :masa,
     }
     return render(request,'detalleMasa.html', context)
-
-def listaIngredientes(request):
-    lista = get_list_or_404(Ingrediente)
-    context = {
-        'lista_ingredientes': lista,
-    }
-    return render(request,'listaIngredientes.html', context)
 
 def detalleIngrediente(request, id_ingrediente):
     ingrediente = get_object_or_404(Ingrediente, pk=id_ingrediente)

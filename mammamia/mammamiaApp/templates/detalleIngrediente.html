@@ -19,7 +19,7 @@ Disfruta del sabor de este ingrediente con estas pizzas.
 {% endblock %}
 
 {% block listaItems %}
-  {% for pizza in ingrediente.pizzas.all %}
+  {% for pizza in ingrediente.pizzas.all|dictsort:"nombre" %}
     <a href="{% url 'detalle_pizza' pizza.id %}" class="media tm-media tm-recommended-item">
       <img src="{% static 'img/tn-img-01.jpg' %}" alt="Image">
       <div class="media-body tm-media-body tm-bg-gray">

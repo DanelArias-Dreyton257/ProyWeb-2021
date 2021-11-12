@@ -34,3 +34,4 @@ class Pizza(models.Model):
 
     def __lt__(self, other):
         return self.precio < other.precio
+

@@ -20,7 +20,7 @@ Descubre que pizzas tenemos con esta masa.
 {% endblock %}
 
 {% block listaItems %}
-  {% for pizza in masa.pizza_set.all %}
+  {% for pizza in masa.pizza_set.all|dictsort:"nombre" %}
   <a href="{% url 'detalle_pizza' pizza.id %}" class="media tm-media tm-recommended-item">
     <img src="{% static 'img/tn-img-01.jpg' %}" alt="Image">
     <div class="media-body tm-media-body tm-bg-gray">
