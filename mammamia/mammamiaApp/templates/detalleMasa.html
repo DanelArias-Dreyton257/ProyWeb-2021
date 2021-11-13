@@ -1,27 +1,29 @@
 {% extends "detalleBase.html" %}
 {% load static %}
 
-{% block nombre %}
+{% block nombre %} <!--Parte que afecta al nombre del elemento-->
 {{masa.nombre}}
 {% endblock %}
 
-{% block mainImg %}<img src="{% static 'img/' %}masa-{{masa.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">{% endblock %}
+{% block mainImg %} <!--Parte que afecta a los enlaces de las imagenes del elemento-->
+<img src="{% static 'img/' %}masa-{{masa.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">
+{% endblock %}
 
-{% block attrbItems %}
+{% block attrbItems %} <!--Parte que afecta a los atributos del elemento-->
   <li>Grosor: {{masa.grosormm}} mm</li>
   <li>Harina: {{masa.tipoHarina}}</li>
   <li>Suplemento: +{{masa.supPrecio}}€</li>
 {% endblock %}
 
-{% block relLista %}
+{% block relLista %} <!--Lista con los elementos asociados-->
 Pizzas
 {% endblock %}
 
-{% block relListaDesc %}
+{% block relListaDesc %} <!--Comentario sobre los elementos asociados-->
 Descubre que pizzas tenemos con esta masa.
 {% endblock %}
 
-{% block listaItems %}
+{% block listaItems %} <!--Lista con los elementos-->
   {% for pizza in masa.pizza_set.all|dictsort:"nombre" %}
   <a href="{% url 'detalle_pizza' pizza.id %}" class="media tm-media tm-recommended-item">
     <img src="{% static 'img/' %}pizza-{{pizza.nombre|lower}}.jpg" width=40% alt="Image">
@@ -29,7 +31,7 @@ Descubre que pizzas tenemos con esta masa.
       <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{{pizza.nombre}} ({{pizza.precio}}€)</h4>
     </div>
   </a>
-  {% empty %}
+  {% empty %} <!--En caso de que la lista este vacia-->
     <p>No se han encontrado pizzas.</p>
   {% endfor %}
 

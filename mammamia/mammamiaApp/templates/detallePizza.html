@@ -1,26 +1,28 @@
 {% extends "detalleBase.html" %}
 {% load static %}
 
-{% block nombre %}
+{% block nombre %} <!--Parte que afecta al nombre del elemento-->
 {{pizza.nombre}}
 {% endblock %}
 
-{% block mainImg %}<img src="{% static 'img/' %}pizza-{{pizza.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">{% endblock %}
+{% block mainImg %} <!--Parte que afecta a los enlaces de las imagenes del elemento-->
+<img src="{% static 'img/' %}pizza-{{pizza.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">
+{% endblock %}
 
-{% block attrbItems %}
+{% block attrbItems %} <!--Parte que afecta a los atributos del elemento-->
   <li>Precio: {{pizza.precio}}€</li>
   <li>Tipo masa:<a href="{% url 'detalle_masa' pizza.masa.id %}"> {{pizza.masa.nombre}}</a></li>
 {% endblock %}
 
-{% block relLista %}
+{% block relLista %} <!--Lista con los elementos asociados-->
 Ingredientes
 {% endblock %}
 
-{% block relListaDesc %}
+{% block relListaDesc %} <!--Comentario sobre los elementos asociados-->
 Descubre de que esta hecha esta pizza.
 {% endblock %}
 
-{% block listaItems %}
+{% block listaItems %} <!--Lista con los elementos-->
   {% for ingrediente in pizza.ingredientes.all|dictsort:"nombre" %}
   <a href="{% url 'detalle_ingrediente' ingrediente.id %}" class="media tm-media tm-recommended-item">
     <img src="{% static 'img/' %}ingrediente-{{ingrediente.nombre|lower}}.jpg" width=40% alt="Image">
@@ -28,7 +30,7 @@ Descubre de que esta hecha esta pizza.
       <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{{ingrediente.nombre}}</h4>
     </div>
   </a>
-{% empty %}
+{% empty %} <!--En caso de que la lista este vacia-->
   <p>No se han encontrado ingredientes.</p>
 {% endfor %}
 

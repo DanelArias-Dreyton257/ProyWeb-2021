@@ -4,7 +4,7 @@
 {% block tit_trian %}Las mejores pizzas al mejor precio{% endblock %}
 {% block subtit_trian %}Pizzas de todos los sabores para todos los gustos{% endblock %}
 
-{% block content %}
+{% block content %} <!--Este trozo pertenece a la plantilla principal y se posiciona en el content-->
 
 <div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
   <div class="container">
@@ -12,13 +12,13 @@
       <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
         <div class="tm-article-carousel">
           <article class="tm-bg-white mr-2 tm-carousel-item">
-            {% block mainImg %}{% endblock %}
+            {% block mainImg %}{% endblock %} <!--Detalla la imagen en particular del objeto-->
             <div class="tm-article-pad">
               <header>
-                <h3 class="text-uppercase tm-article-title-2">{% block nombre %}{% endblock %}</h3>
+                <h3 class="text-uppercase tm-article-title-2">{% block nombre %}{% endblock %}</h3> <!--Detalla el nombre del objeto-->
               </header>
               <ul>
-                {% block attrbItems %}
+                {% block attrbItems %} <!--Detalla la estructura de articulo del detalle de objeto-->
                 {% endblock %}
               </ul>
             </div>
@@ -32,13 +32,11 @@
             <p class="tm-color-white tm-margin-b-0 tm-font-light">{% block relListaDesc %}{% endblock %}</p>
           </div>
           <div class="tm-sidebar-pad-2">
-              {% block listaItems %}
+              {% block listaItems %} <!--Detalla los objetos relacionados con el actual-->
               {% endblock %}
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
 </div>
