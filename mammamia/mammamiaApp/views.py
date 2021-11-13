@@ -11,7 +11,6 @@ def portada(request):
         lista_min_p.append(min(masa.pizza_set.all()))
 
     context = {
-       #Anyadir lo que se necesite
        'lista_min_p' : lista_min_p,
     }
     return render(request,'portada.html', context)

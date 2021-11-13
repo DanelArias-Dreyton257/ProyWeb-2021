@@ -9,12 +9,10 @@ urlpatterns = [
     path('pizzas', views.listaPizzas, name='pizzas'),
     #mammamia/pizzas/[id_pizza]
     path('pizzas/<int:id_pizza>', views.detallePizza,name='detalle_pizza'),
-
     #mammamia/masas
     path('masas', views.listaMasas, name='masas'),
     #mammamia/masas/[id_masa]
     path('masas/<int:id_masa>', views.detalleMasa, name='detalle_masa'),
-
     #mammamia/ingredientes
     path('ingredientes', views.listaIngredientes, name='ingredientes'),
     #mammamia/masas/[id_ingrediente]
