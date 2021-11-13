@@ -1,9 +1,9 @@
 {% extends "listaBase.html" %}
 {% load static %}
 
-{% block models %} ingredientes {% endblock %}
+{% block models %} ingredientes {% endblock %} <!--Detalla el nombre del titulo-->
 
-{% block listaItems %}
+{% block listaItems %} <!--Detalla la lista de ingredientes-->
   {% for ingrediente in lista_ingredientes %}
   <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
     <img src="{% static 'img/' %}ingrediente-{{ingrediente.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">
