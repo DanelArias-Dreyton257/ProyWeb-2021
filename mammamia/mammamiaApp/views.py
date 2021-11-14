@@ -3,6 +3,7 @@ from .models import Pizza, Masa, Ingrediente
 
 # Create your views here.
 
+# Esta funcion mostrara una portada, la cual, aparecera una lista de masas, con una pizza por cada masa
 def portada(request):
     lista_m = get_list_or_404(Masa)
 
@@ -15,6 +16,7 @@ def portada(request):
     }
     return render(request,'portada.html', context)
 
+# Esta funcion mostrara un listado de todas las pizzas
 def listaPizzas(request):
     lista = get_list_or_404(Pizza.objects.all().order_by('nombre'))
     context = {
@@ -22,6 +24,7 @@ def listaPizzas(request):
     }
     return render(request,'listaPizzas.html', context)
 
+# Esta funcion mostrara un listado de todas las masas
 def listaMasas(request):
     lista = get_list_or_404(Masa.objects.all().order_by('nombre'))
     context = {
@@ -29,6 +32,7 @@ def listaMasas(request):
     }
     return render(request,'listaMasas.html', context)
 
+# Esta funcion mostrara un listado de todos los ingredientes
 def listaIngredientes(request):
     lista = get_list_or_404(Ingrediente.objects.all().order_by('nombre'))
     context = {
@@ -36,6 +40,7 @@ def listaIngredientes(request):
     }
     return render(request,'listaIngredientes.html', context)
 
+# Esta funcion mostrara todos los detalles de la pizza
 def detallePizza(request, id_pizza):
     pizza = get_object_or_404(Pizza, pk=id_pizza)
 
@@ -44,6 +49,7 @@ def detallePizza(request, id_pizza):
     }
     return render(request,'detallePizza.html', context)
 
+# Esta funcion mostrara todos los detalles de la masa
 def detalleMasa(request, id_masa):
     masa = get_object_or_404(Masa, pk=id_masa)
 
@@ -52,6 +58,7 @@ def detalleMasa(request, id_masa):
     }
     return render(request,'detalleMasa.html', context)
 
+# Esta funcion mostrara todos los detalles de los ingredientes
 def detalleIngrediente(request, id_ingrediente):
     ingrediente = get_object_or_404(Ingrediente, pk=id_ingrediente)
 
