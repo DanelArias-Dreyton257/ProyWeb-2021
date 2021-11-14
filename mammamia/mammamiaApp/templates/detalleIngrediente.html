@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block mainImg %} <!--Parte que afecta a los enlaces de las imagenes del elemento-->
-<img src="{% static 'img/' %}ingrediente-{{ingrediente.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">
+<img src="{% static 'img/' %}ingrediente-{{ingrediente.nombre|lower|cut:" "}}.jpg" width=75% alt="Image" class="img-fluid">
 {% endblock %}
 
 {% block attrbItems %} <!--Parte que afecta a los atributos del elemento-->
@@ -25,7 +25,7 @@ Disfruta del sabor de este ingrediente con estas pizzas.
 {% block listaItems %} <!--Lista con los elementos-->
   {% for pizza in ingrediente.pizzas.all|dictsort:"nombre" %}
     <a href="{% url 'detalle_pizza' pizza.id %}" class="media tm-media tm-recommended-item">
-      <img src="{% static 'img/' %}pizza-{{pizza.nombre|lower}}.jpg" width=40% alt="Image">
+      <img src="{% static 'img/' %}pizza-{{pizza.nombre|lower|cut:" "}}.jpg" width=40% alt="Image">
       <div class="media-body tm-media-body tm-bg-gray">
         <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{{pizza.nombre}} ({{pizza.precio}}€)</h4>
       </div>

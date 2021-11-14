@@ -31,11 +31,11 @@
   <script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- https://getbootstrap.com/ -->
   <script src="{% static 'js/datepicker.min.js' %}"></script> <!-- https://github.com/qodesmith/datepicker -->
   <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
-  <script src="{% static 'js/extraScript.js' %}"></script> 
+  <script src="{% static 'js/extraScript.js' %}"></script>
   <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
   <script src="{% static 'slick/slick.min.js' %}"></script> <!-- http://kenwheeler.github.io/slick/ -->
-  <script src="{% static 'slick/slick.js' %}"></script> 
-  
+  <script src="{% static 'slick/slick.js' %}"></script>
+
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -88,7 +88,7 @@
           <div class="col text-center">
             <h2 class="tm-section-title">{% block tit_trian %}{% endblock %}</h2>
             <p class="tm-color-white tm-section-subtitle">{% block subtit_trian %}{% endblock %}</p>
-            <a href="#" class="tm-color-white tm-btn-white-bordered">Ver más</a>
+            <a href="{% url 'portada' %}" class="tm-color-white tm-btn-white-bordered">Ver destacadas</a>
           </div>
         </div>
       </div>

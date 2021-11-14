@@ -20,7 +20,7 @@ Mamma Mia
           {% for pizza in lista_min_p %}
 
           <article class="tm-bg-white mr-2 tm-carousel-item">
-            <img src="{% static 'img/' %}pizza-{{pizza.nombre|lower}}.jpg" width=75% alt="Image" class="img-fluid">
+            <img src="{% static 'img/' %}pizza-{{pizza.nombre|lower|cut:" "}}.jpg" width=75% alt="Image" class="img-fluid">
             <div class="tm-article-pad">
               <header>
                 <h3 class="text-uppercase tm-article-title-2">Masa {{pizza.masa.nombre}}</h3>
