@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block mainImg %} <!--Parte que afecta a los enlaces de las imagenes del elemento-->
-<img src="{% static 'img/' %}pizza-{{pizza.nombre|lower|cut:" "}}.jpg" width=75% alt="Image" class="img-fluid">
+<img src="{% static 'img/' %}pizza-{{pizza.nombre|lower|cut:" "}}.jpg" alt="{{pizza.nombre}}" class="img-fluid img-detalle-main">
 {% endblock %}
 
 {% block attrbItems %} <!--Parte que afecta a los atributos del elemento-->
@@ -25,7 +25,7 @@ Descubre de que esta hecha esta pizza.
 {% block listaItems %} <!--Lista con los elementos-->
   {% for ingrediente in pizza.ingredientes.all|dictsort:"nombre" %}
   <a href="{% url 'detalle_ingrediente' ingrediente.id %}" class="media tm-media tm-recommended-item">
-    <img src="{% static 'img/' %}ingrediente-{{ingrediente.nombre|lower|cut:" "}}.jpg" width=40% alt="Image">
+    <img src="{% static 'img/' %}ingrediente-{{ingrediente.nombre|lower|cut:" "}}.jpg" class="img-fluid img-detalle-lista" alt="{{ingrediente.nombre}}">
     <div class="media-body tm-media-body tm-bg-gray">
       <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{{ingrediente.nombre}}</h4>
     </div>

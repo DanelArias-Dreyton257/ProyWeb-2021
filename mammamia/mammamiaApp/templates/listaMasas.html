@@ -6,7 +6,7 @@
 {% block listaItems %} <!--Detalla la lista de masas-->
   {% for masa in lista_masas %}
   <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
-    <img src="{% static 'img/' %}masa-{{masa.nombre|lower|cut:" "}}.jpg" width=75% alt="Image" class="img-fluid">
+    <img src="{% static 'img/' %}masa-{{masa.nombre|lower|cut:" "}}.jpg" alt="{{masa.nombre}}" class="img-fluid img-lista">
     <h3 class="tm-color-primary tm-article-title-1">{{masa.nombre}}</h3>
     <p>Suplemento de +{{masa.supPrecio}}€</p>
     <a href="{% url 'detalle_masa' masa.id %}" class="text-uppercase tm-color-primary tm-font-semibold">Ver más</a>
