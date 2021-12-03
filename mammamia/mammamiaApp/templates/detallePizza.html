@@ -11,8 +11,8 @@
 {% endblock %}
 
 {% block attrbItems %} <!--Parte que afecta a los atributos del elemento-->
-  <li>Price: {{pizza.precio}}€</li>
-  <li>Dough type:<a href="{% url 'detalle_masa' pizza.masa.id %}"> {{pizza.masa.nombre}}</a></li>
+  <li>{% trans "Price" %}: {{pizza.precio}}€</li>
+  <li>{% trans "Dough type" %}:<a href="{% url 'detalle_masa' pizza.masa.id %}"> {{pizza.masa.nombre}}</a></li>
 {% endblock %}
 
 {% block relLista %} <!--Lista con los elementos asociados-->

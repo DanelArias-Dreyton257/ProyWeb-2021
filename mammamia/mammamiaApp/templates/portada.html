@@ -6,9 +6,9 @@
 Mamma Mia
 {% endblock %}
 
-{% block tit_trian %}{% trans "Las mejores pizzas al mejor precio" %}{% endblock %}
+{% block tit_trian %}{% trans "The best pizzas at the best price" %}{% endblock %}
 
-{% block subtit_trian %}{% trans "Pizzas de todos los sabores para todos los gustos" %}{% endblock %}
+{% block subtit_trian %}{% trans "Pizzas of all flavors for all tastes" %}{% endblock %}
 
 {% block content %}
 
@@ -24,10 +24,10 @@ Mamma Mia
             <img src="{% static 'img/' %}pizza-{{pizza.nombre|lower|cut:" "}}.jpg" class="img-fluid img-detalle-main" alt="{{pizza.nombre}}">
             <div class="tm-article-pad">
               <header>
-                <h3 class="text-uppercase tm-article-title-2">{% trans "Dough " %}{{pizza.masa.nombre}}</h3>
+                <h3 class="text-uppercase tm-article-title-2">{% trans "Dough" %} {{pizza.masa.nombre}}</h3>
               </header>
-              <p>{{pizza.nombre}} ({% trans "Only for " %}{{pizza.precio}}€ !!)</p>
-              <a href="{% url 'detalle_pizza' pizza.id %}" class="text-uppercase btn-primary tm-btn-primary">{% trans "Home" %}See more</a>
+              <p>{{pizza.nombre}} ({% trans "Only for" %} {{pizza.precio}}€ !!)</p>
+              <a href="{% url 'detalle_pizza' pizza.id %}" class="text-uppercase btn-primary tm-btn-primary">{% trans "See more" %}</a>
             </div>
           </article>
 

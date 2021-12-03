@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block models %} {% trans "Pizzas " %} {% endblock %} <!--Detalla el nombre del titulo-->
+{% block models %} {% trans "Pizzas" %} {% endblock %} <!--Detalla el nombre del titulo-->
 
 {% block listaItems %} <!--Detalla la lista de pizzas-->
 
@@ -11,8 +11,8 @@
 <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
   <img src="{% static 'img/' %}pizza-{{pizza.nombre|lower|cut:" "}}.jpg" alt="{{masa.nombre}}" class="img-fluid img-lista">
   <h3 class="tm-color-primary tm-article-title-1">{{pizza.nombre}}</h3>
-  <p>{% trans "For only " %}{{pizza.precio}}€ !!</p>
-  <a href="{% url 'detalle_pizza' pizza.id %}" class="text-uppercase tm-color-primary tm-font-semibold">{% trans "See more " %}</a>
+  <p>{% trans "For only" %} {{pizza.precio}}€ !!</p>
+  <a href="{% url 'detalle_pizza' pizza.id %}" class="text-uppercase tm-color-primary tm-font-semibold">{% trans "See more" %}</a>
 </article>
 
 {% empty %}

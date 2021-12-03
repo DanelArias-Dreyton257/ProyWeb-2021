@@ -11,9 +11,9 @@
 {% endblock %}
 
 {% block attrbItems %} <!--Parte que afecta a los atributos del elemento-->
-  <li>{% trans "Thickness: " %}{{masa.grosormm}} mm</li>
-  <li>{% trans "Flour: " %}{{masa.tipoHarina}}</li>
-  <li>{% trans "Supplement: +" %}{{masa.supPrecio}}€</li>
+  <li>{% trans "Thickness" %}: {{masa.grosormm}} mm</li>
+  <li>{% trans "Flour" %}: {{masa.tipoHarina}}</li>
+  <li>{% trans "Supplement" %}: +{{masa.supPrecio}}€</li>
 {% endblock %}
 
 {% block relLista %} <!--Lista con los elementos asociados-->
