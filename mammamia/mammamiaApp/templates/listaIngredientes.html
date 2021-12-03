@@ -8,10 +8,10 @@
   <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
     <img src="{% static 'img/' %}ingrediente-{{ingrediente.nombre|lower|cut:" "}}.jpg" class="img-fluid img-lista" alt="{{ingrediente.nombre}}">
     <h3 class="tm-color-primary tm-article-title-1">{{ingrediente.nombre}}</h3>
-    <p> Traido directamente desde {{ingrediente.origen}}</p>
+    <p> Brought directly from {{ingrediente.origen}}</p>
     <a href="{% url 'detalle_ingrediente' ingrediente.id %}" class="text-uppercase tm-color-primary tm-font-semibold">Ver más</a>
   </article>
   {% empty %}
-      <p>No se han encontrado ingredientes</p>
+      <p>No ingredients found</p>
   {% endfor %}
 {% endblock %}

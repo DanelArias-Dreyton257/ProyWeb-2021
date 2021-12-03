@@ -10,16 +10,16 @@
 {% endblock %}
 
 {% block attrbItems %} <!--Parte que afecta a los atributos del elemento-->
-  <li>Precio: {{pizza.precio}}€</li>
-  <li>Tipo masa:<a href="{% url 'detalle_masa' pizza.masa.id %}"> {{pizza.masa.nombre}}</a></li>
+  <li>Price: {{pizza.precio}}€</li>
+  <li>Dough type:<a href="{% url 'detalle_masa' pizza.masa.id %}"> {{pizza.masa.nombre}}</a></li>
 {% endblock %}
 
 {% block relLista %} <!--Lista con los elementos asociados-->
-Ingredientes
+Ingredients
 {% endblock %}
 
 {% block relListaDesc %} <!--Comentario sobre los elementos asociados-->
-Descubre de que esta hecha esta pizza.
+Find out what this pizza is made of.
 {% endblock %}
 
 {% block listaItems %} <!--Lista con los elementos-->
@@ -31,7 +31,7 @@ Descubre de que esta hecha esta pizza.
     </div>
   </a>
 {% empty %} <!--En caso de que la lista este vacia-->
-  <p>No se han encontrado ingredientes.</p>
+  <p>No ingredients found.</p>
 {% endfor %}
 
 {% endblock %}

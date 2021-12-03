@@ -10,9 +10,9 @@
 {% endblock %}
 
 {% block attrbItems %} <!--Parte que afecta a los atributos del elemento-->
-  <li>Grosor: {{masa.grosormm}} mm</li>
-  <li>Harina: {{masa.tipoHarina}}</li>
-  <li>Suplemento: +{{masa.supPrecio}}€</li>
+  <li>Thickness: {{masa.grosormm}} mm</li>
+  <li>Flour: {{masa.tipoHarina}}</li>
+  <li>Supplement: +{{masa.supPrecio}}€</li>
 {% endblock %}
 
 {% block relLista %} <!--Lista con los elementos asociados-->
@@ -20,7 +20,7 @@ Pizzas
 {% endblock %}
 
 {% block relListaDesc %} <!--Comentario sobre los elementos asociados-->
-Descubre que pizzas tenemos con esta masa.
+Discover what pizzas we have with this dough.
 {% endblock %}
 
 {% block listaItems %} <!--Lista con los elementos-->
@@ -32,7 +32,7 @@ Descubre que pizzas tenemos con esta masa.
     </div>
   </a>
   {% empty %} <!--En caso de que la lista este vacia-->
-    <p>No se han encontrado pizzas.</p>
+    <p>No pizzas were found.</p>
   {% endfor %}
 
 {% endblock %}
