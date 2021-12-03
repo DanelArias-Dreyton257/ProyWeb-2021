@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,16 +66,16 @@
             <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'portada' %}">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{% url 'portada' %}">{% trans "Home" %}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'pizzas' %}">Pizzas</a>
+                  <a class="nav-link" href="{% url 'pizzas' %}">{% trans "Pizzas" %}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'masas' %}">Doughs</a>
+                  <a class="nav-link" href="{% url 'masas' %}">{% trans "Doughs" %}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'ingredientes' %}">Ingredients</a>
+                  <a class="nav-link" href="{% url 'ingredientes' %}">{% trans "Ingredients" %}</a>
                 </li>
               </ul>
             </div>
@@ -89,7 +90,7 @@
           <div class="col text-center">
             <h2 class="tm-section-title">{% block tit_trian %}{% endblock %}</h2>
             <p class="tm-color-white tm-section-subtitle">{% block subtit_trian %}{% endblock %}</p>
-            <a href="{% url 'portada' %}" class="tm-color-white tm-btn-white-bordered">Pizzas destacadas</a>
+            <a href="{% url 'portada' %}" class="tm-color-white tm-btn-white-bordered">{% trans "Pizzas destacadas" %}</a>
           </div>
         </div>
       </div>

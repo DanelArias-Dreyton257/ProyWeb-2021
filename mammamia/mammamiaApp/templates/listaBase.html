@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block tit_trian %}List of {% block models %}{% endblock %}{% endblock %}
+{% block tit_trian %}{% trans "List of " %}{% block models %}{% endblock %}{% endblock %}
 
-{% block subtit_trian %}Research our products{% endblock %}
+{% block subtit_trian %}{% trans "Research our products" %}{% endblock %}
 
 {% block content %}
 
