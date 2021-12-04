@@ -1,0 +1,217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-04 09:04+0100\n"
+"PO-Revision-Date: 2021-12-04 09:06+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0\n"
+
+#: .\mammamiaApp\models.py:7 .\mammamiaApp\models.py:17
+#: .\mammamiaApp\models.py:28
+msgid "name"
+msgstr "nome"
+
+#: .\mammamiaApp\models.py:8
+msgid "width mm"
+msgstr "larghezza"
+
+#: .\mammamiaApp\models.py:9
+msgid "flour Type"
+msgstr "tipo di farina"
+
+#: .\mammamiaApp\models.py:10
+msgid "supplement"
+msgstr "supplemento"
+
+#: .\mammamiaApp\models.py:18
+msgid "origin"
+msgstr "origine"
+
+#: .\mammamiaApp\models.py:19
+msgid "kcal"
+msgstr "kcal"
+
+#: .\mammamiaApp\models.py:29
+msgid "price"
+msgstr "prezzo"
+
+#: .\mammamiaApp\templates\base.html:69
+msgid "Home"
+msgstr "Inizio"
+
+#: .\mammamiaApp\templates\base.html:72
+#: .\mammamiaApp\templates\detalleIngrediente.html:19
+#: .\mammamiaApp\templates\detalleMasa.html:20
+#: .\mammamiaApp\templates\listaPizzas.html:5
+msgid "Pizzas"
+msgstr "Pizze"
+
+#: .\mammamiaApp\templates\base.html:75
+msgid "Doughs"
+msgstr "Impasto"
+
+#: .\mammamiaApp\templates\base.html:78
+#: .\mammamiaApp\templates\detallePizza.html:19
+#: .\mammamiaApp\templates\listaIngredientes.html:5
+msgid "Ingredients"
+msgstr "Ingredienti"
+
+#: .\mammamiaApp\templates\base.html:93
+msgid "Featured pizzas"
+msgstr "Pizze in evidenza"
+
+#: .\mammamiaApp\templates\detalleBase.html:5
+#: .\mammamiaApp\templates\portada.html:9
+msgid "The best pizzas at the best price"
+msgstr "Le migliori pizze al miglior prezzo"
+
+#: .\mammamiaApp\templates\detalleBase.html:6
+#: .\mammamiaApp\templates\portada.html:11
+msgid "Pizzas of all flavors for all tastes"
+msgstr "Pizze di tutti i gusti per tutti i gusti"
+
+#: .\mammamiaApp\templates\detalleBase.html:32
+msgid "List"
+msgstr "Elenco"
+
+#: .\mammamiaApp\templates\detalleIngrediente.html:14
+msgid "Origin"
+msgstr "Origine"
+
+#: .\mammamiaApp\templates\detalleIngrediente.html:15
+msgid "per"
+msgstr "per"
+
+#: .\mammamiaApp\templates\detalleIngrediente.html:23
+msgid "Enjoy the flavor of this ingredient with these pizzas."
+msgstr "Godete il sapore di questo ingrediente con queste pizze."
+
+#: .\mammamiaApp\templates\detalleIngrediente.html:35
+msgid "No pizzas found."
+msgstr "Non si sono trovate pizze."
+
+#: .\mammamiaApp\templates\detalleMasa.html:14
+msgid "Thickness"
+msgstr "Spessore"
+
+#: .\mammamiaApp\templates\detalleMasa.html:15
+msgid "Flour"
+msgstr "Farina"
+
+#: .\mammamiaApp\templates\detalleMasa.html:16
+msgid "Supplement"
+msgstr "Supplemento"
+
+#: .\mammamiaApp\templates\detalleMasa.html:24
+msgid "Discover what pizzas we have with this dough."
+msgstr "Scopri quali pizze abbiamo con questo impasto."
+
+#: .\mammamiaApp\templates\detalleMasa.html:36
+msgid "No pizzas were found."
+msgstr "Non si sono trovate pizze."
+
+#: .\mammamiaApp\templates\detallePizza.html:14
+msgid "Price"
+msgstr "Prezzo"
+
+#: .\mammamiaApp\templates\detallePizza.html:15
+msgid "Dough type"
+msgstr "Tipo di impasto"
+
+#: .\mammamiaApp\templates\detallePizza.html:23
+msgid "Find out what this pizza is made of."
+msgstr "Scopri di cosa è fatta questa pizza."
+
+#: .\mammamiaApp\templates\detallePizza.html:35
+msgid "No ingredients found."
+msgstr "Nessun ingrediente trovate."
+
+#: .\mammamiaApp\templates\listaBase.html:4
+msgid "List of"
+msgstr "Elenco di"
+
+#: .\mammamiaApp\templates\listaBase.html:6
+msgid "Research our products"
+msgstr "Cerca i nostri prodotti"
+
+#: .\mammamiaApp\templates\listaIngredientes.html:12
+msgid "Brought directly from "
+msgstr "Portato direttamente da "
+
+#: .\mammamiaApp\templates\listaIngredientes.html:13
+#: .\mammamiaApp\templates\listaMasas.html:13
+#: .\mammamiaApp\templates\listaPizzas.html:15
+#: .\mammamiaApp\templates\portada.html:30
+msgid "See more"
+msgstr "Vedere di più"
+
+#: .\mammamiaApp\templates\listaIngredientes.html:16
+msgid "No ingredients found"
+msgstr "Nessun ingrediente trovate"
+
+#: .\mammamiaApp\templates\listaMasas.html:5
+msgid "Doughs "
+msgstr "Impasti "
+
+#: .\mammamiaApp\templates\listaMasas.html:12
+msgid "Suplement of"
+msgstr "Supplemento di"
+
+#: .\mammamiaApp\templates\listaMasas.html:16
+#: .\mammamiaApp\templates\listaPizzas.html:19
+msgid "No doughs have been found."
+msgstr "Non sono stati trovati impasti."
+
+#: .\mammamiaApp\templates\listaPizzas.html:14
+msgid "For only"
+msgstr "Solo per"
+
+#: .\mammamiaApp\templates\portada.html:27
+msgid "Dough"
+msgstr "Impasto"
+
+#: .\mammamiaApp\templates\portada.html:29
+msgid "Only for"
+msgstr "Solo per"
+
+#: .\mammamiaApp\templates\portada.html:35
+msgid "No doughs were found."
+msgstr "Non sono stati trovati impasti."
+
+#: .\mammamiaApp\templates\portada.html:46
+msgid "Our Pizzas"
+msgstr "Le nostre pizze"
+
+#: .\mammamiaApp\templates\portada.html:47
+msgid "In this places of the world"
+msgstr "In questi luoghi del mondo"
+
+#: .\mammamia\settings.py:125
+msgid "English"
+msgstr "Inglese"
+
+#: .\mammamia\settings.py:126
+msgid "Spanish"
+msgstr "Spagnolo"
+
+#: .\mammamia\settings.py:127
+msgid "Italian"
+msgstr "Italiano"
+
+#~ msgid "dough"
+#~ msgstr "impasto"
+
+#~ msgid "pizzas"
+#~ msgstr "pizze"
