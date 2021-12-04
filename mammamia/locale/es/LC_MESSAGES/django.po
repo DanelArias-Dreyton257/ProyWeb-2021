@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-04 09:04+0100\n"
-"PO-Revision-Date: 2021-12-04 09:18+0000\n"
-"Last-Translator:   <admin@admin.com>\n"
+"POT-Creation-Date: 2021-12-04 10:42+0100\n"
+"PO-Revision-Date: 2021-12-04 10:42+0100\n"
+"Last-Translator: admin@admin.com\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -199,6 +199,22 @@ msgstr "Nuestras pizzas"
 msgid "In this places of the world"
 msgstr "En estos lugares del mundo"
 
+#: .\mammamiaApp\templates\portada.html:53
+msgid "Europe"
+msgstr "Europa"
+
+#: .\mammamiaApp\templates\portada.html:59
+msgid "Asia"
+msgstr "Asia"
+
+#: .\mammamiaApp\templates\portada.html:65
+msgid "Africa"
+msgstr "África"
+
+#: .\mammamiaApp\templates\portada.html:71
+msgid "South America"
+msgstr "América del sur"
+
 #: .\mammamia\settings.py:125
 msgid "English"
 msgstr "Inglés"
@@ -210,6 +226,14 @@ msgstr "Español"
 #: .\mammamia\settings.py:127
 msgid "Italian"
 msgstr "Italiano"
+
+#: .\mammamia\settings.py:128
+msgid "Japanese"
+msgstr "Japonés"
+
+#: .\mammamia\urls.py:22
+msgid "admin/"
+msgstr ""
 
 #~ msgid "dough"
 #~ msgstr "masa"

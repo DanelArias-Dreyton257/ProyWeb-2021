@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-04 10:42+0100\n"
-"PO-Revision-Date: 2021-12-04 10:45+0100\n"
+"PO-Revision-Date: 2021-12-04 10:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: it\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,23 +21,23 @@ msgstr ""
 #: .\mammamiaApp\models.py:7 .\mammamiaApp\models.py:17
 #: .\mammamiaApp\models.py:28
 msgid "name"
-msgstr "nome"
+msgstr "名前"
 
 #: .\mammamiaApp\models.py:8
 msgid "width mm"
-msgstr "larghezza"
+msgstr "幅 mm"
 
 #: .\mammamiaApp\models.py:9
 msgid "flour Type"
-msgstr "tipo di farina"
+msgstr "小麦粉の種類"
 
 #: .\mammamiaApp\models.py:10
 msgid "supplement"
-msgstr "supplemento"
+msgstr "補足"
 
 #: .\mammamiaApp\models.py:18
 msgid "origin"
-msgstr "origine"
+msgstr "オリジン"
 
 #: .\mammamiaApp\models.py:19
 msgid "kcal"
@@ -45,50 +45,50 @@ msgstr "kcal"
 
 #: .\mammamiaApp\models.py:29
 msgid "price"
-msgstr "prezzo"
+msgstr "価格"
 
 #: .\mammamiaApp\templates\base.html:69
 msgid "Home"
-msgstr "Inizio"
+msgstr "ホーム"
 
 #: .\mammamiaApp\templates\base.html:72
 #: .\mammamiaApp\templates\detalleIngrediente.html:19
 #: .\mammamiaApp\templates\detalleMasa.html:20
 #: .\mammamiaApp\templates\listaPizzas.html:5
 msgid "Pizzas"
-msgstr "Pizze"
+msgstr "ピッツァ"
 
 #: .\mammamiaApp\templates\base.html:75
 msgid "Doughs"
-msgstr "Impasto"
+msgstr "パン生地"
 
 #: .\mammamiaApp\templates\base.html:78
 #: .\mammamiaApp\templates\detallePizza.html:19
 #: .\mammamiaApp\templates\listaIngredientes.html:5
 msgid "Ingredients"
-msgstr "Ingredienti"
+msgstr "材料"
 
 #: .\mammamiaApp\templates\base.html:93
 msgid "Featured pizzas"
-msgstr "Pizze in evidenza"
+msgstr "おすすめのピッツァ"
 
 #: .\mammamiaApp\templates\detalleBase.html:5
 #: .\mammamiaApp\templates\portada.html:9
 msgid "The best pizzas at the best price"
-msgstr "Le migliori pizze al miglior prezzo"
+msgstr "最高のピッツァを最高の価格で"
 
 #: .\mammamiaApp\templates\detalleBase.html:6
 #: .\mammamiaApp\templates\portada.html:11
 msgid "Pizzas of all flavors for all tastes"
-msgstr "Pizze di tutti i gusti per tutti i gusti"
+msgstr "すべての人のためのすべてのフレーバーのピッツァ"
 
 #: .\mammamiaApp\templates\detalleBase.html:32
 msgid "List"
-msgstr "Elenco"
+msgstr "リスト"
 
 #: .\mammamiaApp\templates\detalleIngrediente.html:14
 msgid "Origin"
-msgstr "Origine"
+msgstr "オリジン"
 
 #: .\mammamiaApp\templates\detalleIngrediente.html:15
 msgid "per"
@@ -96,146 +96,140 @@ msgstr "per"
 
 #: .\mammamiaApp\templates\detalleIngrediente.html:23
 msgid "Enjoy the flavor of this ingredient with these pizzas."
-msgstr "Godete il sapore di questo ingrediente con queste pizze."
+msgstr "この素材の味を、このピッツァでお楽しみください."
 
 #: .\mammamiaApp\templates\detalleIngrediente.html:35
 msgid "No pizzas found."
-msgstr "Non si sono trovate pizze."
+msgstr "ピッツァは見つかりませんでした."
 
 #: .\mammamiaApp\templates\detalleMasa.html:14
 msgid "Thickness"
-msgstr "Spessore"
+msgstr "厚さ"
 
 #: .\mammamiaApp\templates\detalleMasa.html:15
 msgid "Flour"
-msgstr "Farina"
+msgstr "小麦粉"
 
 #: .\mammamiaApp\templates\detalleMasa.html:16
 msgid "Supplement"
-msgstr "Supplemento"
+msgstr "補足"
 
 #: .\mammamiaApp\templates\detalleMasa.html:24
 msgid "Discover what pizzas we have with this dough."
-msgstr "Scopri quali pizze abbiamo con questo impasto."
+msgstr "この生地を使ってどんなピザができるのか見てみましょう."
 
 #: .\mammamiaApp\templates\detalleMasa.html:36
 msgid "No pizzas were found."
-msgstr "Non si sono trovate pizze."
+msgstr "ピザは見つかりませんでした."
 
 #: .\mammamiaApp\templates\detallePizza.html:14
 msgid "Price"
-msgstr "Prezzo"
+msgstr "価格"
 
 #: .\mammamiaApp\templates\detallePizza.html:15
 msgid "Dough type"
-msgstr "Tipo di impasto"
+msgstr "パン生地の種類"
 
 #: .\mammamiaApp\templates\detallePizza.html:23
 msgid "Find out what this pizza is made of."
-msgstr "Scopri di cosa è fatta questa pizza."
+msgstr "このピザが何でできているのか、調べてみましょう."
 
 #: .\mammamiaApp\templates\detallePizza.html:35
 msgid "No ingredients found."
-msgstr "Nessun ingrediente trovate."
+msgstr "成分は見つかりませんでした."
 
 #: .\mammamiaApp\templates\listaBase.html:4
 msgid "List of"
-msgstr "Elenco di"
+msgstr "リスト :"
 
 #: .\mammamiaApp\templates\listaBase.html:6
 msgid "Research our products"
-msgstr "Cerca i nostri prodotti"
+msgstr "製品情報"
 
 #: .\mammamiaApp\templates\listaIngredientes.html:12
 msgid "Brought directly from "
-msgstr "Portato direttamente da "
+msgstr "から直接持ってきた:"
 
 #: .\mammamiaApp\templates\listaIngredientes.html:13
 #: .\mammamiaApp\templates\listaMasas.html:13
 #: .\mammamiaApp\templates\listaPizzas.html:15
 #: .\mammamiaApp\templates\portada.html:30
 msgid "See more"
-msgstr "Vedere di più"
+msgstr "続きを見る"
 
 #: .\mammamiaApp\templates\listaIngredientes.html:16
 msgid "No ingredients found"
-msgstr "Nessun ingrediente trovate"
+msgstr "成分は見つかりませんでした"
 
 #: .\mammamiaApp\templates\listaMasas.html:5
 msgid "Doughs "
-msgstr "Impasti "
+msgstr "パン生地"
 
 #: .\mammamiaApp\templates\listaMasas.html:12
 msgid "Suplement of"
-msgstr "Supplemento di"
+msgstr "補足 :"
 
 #: .\mammamiaApp\templates\listaMasas.html:16
 #: .\mammamiaApp\templates\listaPizzas.html:19
 msgid "No doughs have been found."
-msgstr "Non sono stati trovati impasti."
+msgstr "生地は見つかりませんでした"
 
 #: .\mammamiaApp\templates\listaPizzas.html:14
 msgid "For only"
-msgstr "Solo per"
+msgstr "たったの："
 
 #: .\mammamiaApp\templates\portada.html:27
 msgid "Dough"
-msgstr "Impasto"
+msgstr "パン生地"
 
 #: .\mammamiaApp\templates\portada.html:29
 msgid "Only for"
-msgstr "Solo per"
+msgstr "のみ:"
 
 #: .\mammamiaApp\templates\portada.html:35
 msgid "No doughs were found."
-msgstr "Non sono stati trovati impasti."
+msgstr "生地は見つかりませんでした."
 
 #: .\mammamiaApp\templates\portada.html:46
 msgid "Our Pizzas"
-msgstr "Le nostre pizze"
+msgstr "私たちのピザ"
 
 #: .\mammamiaApp\templates\portada.html:47
 msgid "In this places of the world"
-msgstr "In questi luoghi del mondo"
+msgstr "世界のこの場所で"
 
 #: .\mammamiaApp\templates\portada.html:53
 msgid "Europe"
-msgstr "Europa"
+msgstr "ヨーロッパ"
 
 #: .\mammamiaApp\templates\portada.html:59
 msgid "Asia"
-msgstr "Asia"
+msgstr "アジア"
 
 #: .\mammamiaApp\templates\portada.html:65
 msgid "Africa"
-msgstr "Africa"
+msgstr "アフリカ"
 
 #: .\mammamiaApp\templates\portada.html:71
 msgid "South America"
-msgstr "Sud America"
+msgstr "南アメリカ"
 
 #: .\mammamia\settings.py:125
 msgid "English"
-msgstr "Inglese"
+msgstr "英語"
 
 #: .\mammamia\settings.py:126
 msgid "Spanish"
-msgstr "Spagnolo"
+msgstr "スペイン語"
 
 #: .\mammamia\settings.py:127
 msgid "Italian"
-msgstr "Italiano"
+msgstr "イタリア語"
 
 #: .\mammamia\settings.py:128
 msgid "Japanese"
-msgstr "Giapponese"
+msgstr "日本語"
 
 #: .\mammamia\urls.py:22
 msgid "admin/"
 msgstr ""
-
-#~ msgid "dough"
-#~ msgstr "impasto"
-
-#~ msgid "pizzas"
-#~ msgstr "pizze"
