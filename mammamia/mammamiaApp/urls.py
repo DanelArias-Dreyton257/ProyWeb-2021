@@ -17,4 +17,6 @@ urlpatterns = [
     path('ingredientes', ListaIngredientes.as_view(), name='ingredientes'),
     #mammamia/masas/[id_ingrediente]
     path('ingredientes/<int:pk>', DetalleIngrediente.as_view(), name='detalle_ingrediente'),
+    #mammamia/pedido
+    path('pedido', Pedido.as_view(), name='pedido'),
 ]

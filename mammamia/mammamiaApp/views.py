@@ -125,3 +125,9 @@ class DetalleIngrediente(DetailView):
     model = Ingrediente
     template_name = "detalleIngrediente.html"
     context_object_name = "ingrediente"
+
+# Esta funcion mostrara un formulario en el que poder realizar un pedido 
+class Pedido(DetailView):  
+    model = Ingrediente
+    template_name = "detalleIngrediente.html"
+    context_object_name = "ingrediente"

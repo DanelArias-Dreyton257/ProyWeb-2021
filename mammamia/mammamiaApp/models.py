@@ -37,3 +37,19 @@ class Pizza(models.Model):
 
     def __lt__(self, other):
         return self.precio < other.precio
+
+# Clase Pedido con telefono, direccion, listado de pizzas y nombre del cliente
+class Pedido(models.Model):
+    nombre = models.CharField(_('name'),max_length=50)
+    apellido = models.CharField(_('surname'),max_length=50)
+    calle = models.CharField(_('street'),max_length=100)
+    cPostal = models.IntegerField(_('postal code'))
+    nTelefono = models.IntegerField(_('telephone number'))
+    
+    precio = models.DecimalField(_('price'),decimal_places=2, default=0, max_digits=5)
+    
+    lPizzas = models.ManyToManyField(Pizza, related_name='pizzasPorPedido')
+
+
+    def __str__(self):
+        return "{} {} ({}€ -- {})".format(self.nombre, self.apellido, self.precio, self.calle)
