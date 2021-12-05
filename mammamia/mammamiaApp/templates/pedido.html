@@ -19,33 +19,44 @@ Mamma Mia
         <div class="tm-article-carousel">
 
           <article class="tm-bg-white mr-2 tm-carousel-item">
-            <img src="{% static 'img/' %} pizza-iberica.jpg" class="img-fluid img-detalle-main"
-              alt="{{pedidio.nombre}}">
-            <div class="tm-article-pad">
-              <header>
+            <img src="{% static 'img/' %} pizza-iberica.jpg" class="img-fluid img-detalle-main" alt="{{pedidio.nombre}}">
+            <div class="tm-bg-white tm-p-4">
+              <form method="post" class="contact-form">
+              <div class="form-group">
                 <h3 class="text-uppercase tm-article-title-2">{% trans "Lets Start your order!" %}</h3>
-              </header>
-              <br>
-              <label for="name">{% trans "Name" %}</label>
-              <input type="text" id="name" name="name"> <br>
-              <label for="surname">{% trans "Surname" %}</label>
-              <input type="text" id="surname" name="surname"> <br><br>
-              <label for="street">{% trans "Address" %}</label>
-              <input type="text" id="street" name="street">
-              <label for="pCode">{% trans "Postal code" %}</label>
-              <input type="number" id="pCode" name="pCode" min="10000" max="99999"><br><br>
-              {% for pizza in lista_p %}
-              <input type="checkbox" name="{{pizza.nombre}}" value="{{pizza.id}}">
-              <input type="number" for="{{pizza.nombre}}" id="quantity" name="quantity" min="1" max="10">
-              <label for="{{pizza.nombre}}"> {{pizza.nombre}}</label><br>
-              {% empty %}
-              <p>{% trans "No pizzas were found." %}</p>
-              {% endfor %}<br>
-              <label for="hyt">{% trans "Select the day and time you want to recieve your pizza" %}</label> <br>
-              <input type="datetime-local" id="hyt" name="hyt"><br><br>
-              <textarea rows="5" id="comments" name="comments">Comentarios</textarea><br>
-              <label>{% trans "Price" %}: total €</label> <br>
-              <button id="submit" class="btn btn-primary">Submit</button>
+              </div>
+              <form method="post" class="contact-form">
+                <div class="form-group">
+                  <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"
+                    required="">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="contact_surname" name="contact_surname" class="form-control"
+                    placeholder="Suraname" required="">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="contact_street" name="contact_street" class="form-control" placeholder="Street"
+                    required="">
+                  <label for="pCode" id="contact_pCode" name="contact_pCode" class="form-control">{% trans "Postal code" %}</label>
+                  <input type="number" id="pCode" class="form-control" name="pCode" min="10000" max="99999">
+                </div>
+                <div class="form-group">
+                  {% for pizza in lista_p %}
+                  <input type="checkbox" name="{{pizza.nombre}}" value="{{pizza.id}}">
+                  <input type="number" for="{{pizza.nombre}}" id="quantity" name="quantity" min="1" max="10">
+                  <label for="{{pizza.nombre}}"> {{pizza.nombre}}</label><br>
+                  {% empty %}
+                  <p>{% trans "No pizzas were found." %}</p>
+                  {% endfor %}<br>
+                </div>
+                <div class="form-group">
+                  <label for="hyt" class="form-control">{% trans "Select the day and time you want to recieve your pizza" %}</label>
+                  <input type="datetime-local" class="form-control" id="hyt" name="hyt"> <br>
+                  <label  class="form-control" >{% trans "Price" %}: total €</label>
+                  <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder={% trans "Coments" %} required=""></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary tm-btn-primary">Send Order Now</button>
+              </form>
             </div>
           </article>
         </div>
