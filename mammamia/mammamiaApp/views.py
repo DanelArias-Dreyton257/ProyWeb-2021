@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
-from .models import Pizza, Masa, Ingrediente
-from django.views.generic.list import *
-from django.views.generic.detail import *
+from .models import *
+from django.views.generic import *
 
 
 # Vistas basadas en funciones
@@ -127,7 +126,9 @@ class DetalleIngrediente(DetailView):
     context_object_name = "ingrediente"
 
 # Esta funcion mostrara un formulario en el que poder realizar un pedido 
-class Pedido(DetailView):  
-    model = Ingrediente
-    template_name = "detalleIngrediente.html"
-    context_object_name = "ingrediente"
+class Pedido(ListView):  
+    model = Pedido
+    lista_p = get_list_or_404(Pizza)
+    queryset = lista_p
+    template_name = "pedido.html"
+    context_object_name = "lista_p"

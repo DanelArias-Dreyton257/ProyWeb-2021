@@ -18,23 +18,36 @@ Mamma Mia
       <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
         <div class="tm-article-carousel">
 
-          {% for pizza in lista_min_p %}
-
           <article class="tm-bg-white mr-2 tm-carousel-item">
-            <img src="{% static 'img/' %}pizza-{{pizza.nombre|lower|cut:" "}}.jpg" class="img-fluid img-detalle-main" alt="{{pizza.nombre}}">
+            <img src="{% static 'img/' %} pizza-iberica.jpg" class="img-fluid img-detalle-main"
+              alt="{{pedidio.nombre}}">
             <div class="tm-article-pad">
               <header>
-                <h3 class="text-uppercase tm-article-title-2">{% trans "Dough" %} {{pizza.masa.nombre}}</h3>
+                <h3 class="text-uppercase tm-article-title-2">{% trans "Lets Start your order!" %}</h3>
               </header>
-              <p>{{pizza.nombre}} ({% trans "Only for" %} {{pizza.precio}}€ !!)</p>
-              <a href="{% url 'detalle_pizza' pizza.id %}" class="text-uppercase btn-primary tm-btn-primary">{% trans "See more" %}</a>
+              <br>
+              <label for="name">{% trans "Name" %}</label>
+              <input type="text" id="name" name="name"> <br>
+              <label for="surname">{% trans "Surname" %}</label>
+              <input type="text" id="surname" name="surname"> <br><br>
+              <label for="street">{% trans "Address" %}</label>
+              <input type="text" id="street" name="street">
+              <label for="pCode">{% trans "Postal code" %}</label>
+              <input type="number" id="pCode" name="pCode" min="10000" max="99999"><br><br>
+              {% for pizza in lista_p %}
+              <input type="checkbox" name="{{pizza.nombre}}" value="{{pizza.id}}">
+              <input type="number" for="{{pizza.nombre}}" id="quantity" name="quantity" min="1" max="10">
+              <label for="{{pizza.nombre}}"> {{pizza.nombre}}</label><br>
+              {% empty %}
+              <p>{% trans "No pizzas were found." %}</p>
+              {% endfor %}<br>
+              <label for="hyt">{% trans "Select the day and time you want to recieve your pizza" %}</label> <br>
+              <input type="datetime-local" id="hyt" name="hyt"><br><br>
+              <textarea rows="5" id="comments" name="comments">Comentarios</textarea><br>
+              <label>{% trans "Price" %}: total €</label> <br>
+              <button id="submit" class="btn btn-primary">Submit</button>
             </div>
           </article>
-
-          {% empty %}
-          <p>{% trans "No doughs were found." %}</p>
-          {% endfor %}
-
         </div>
       </div>
 
@@ -45,36 +58,36 @@ Mamma Mia
           <div class="tm-bg-primary tm-sidebar-pad">
             <h3 class="tm-color-white tm-sidebar-title">{% trans "Our Pizzas" %}</h3>
             <p class="tm-color-white tm-margin-b-0 tm-font-light">{% trans "In this places of the world" %}</p>
-            </div>
-            <div class="tm-sidebar-pad-2">
-              <a href="#" class="media tm-media tm-recommended-item">
-                <img src="{% static 'img/tn-img-01.jpg' %}" alt="Image">
-                <div class="media-body tm-media-body tm-bg-gray">
-                  <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{% trans "Europe" %}</h4>
-                </div>
-              </a>
-              <a href="#" class="media tm-media tm-recommended-item">
-                <img src="{% static 'img/tn-img-02.jpg' %}" alt="Image">
-                <div class="media-body tm-media-body tm-bg-gray">
-                  <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{% trans "Asia" %}</h4>
-                </div>
-              </a>
-              <a href="#" class="media tm-media tm-recommended-item">
-                <img src="{% static 'img/tn-img-03.jpg' %}" alt="Image">
-                <div class="media-body tm-media-body tm-bg-gray">
-                  <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{% trans "Africa" %}</h4>
-                </div>
-              </a>
-              <a href="#" class="media tm-media tm-recommended-item">
-                <img src="{% static 'img/tn-img-04.jpg' %}" alt="Image">
-                <div class="media-body tm-media-body tm-bg-gray">
-                  <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{% trans "South America" %}</h4>
-                </div>
-              </a>
-            </div>
+          </div>
+          <div class="tm-sidebar-pad-2">
+            <a href="#" class="media tm-media tm-recommended-item">
+              <img src="{% static 'img/tn-img-01.jpg' %}" alt="Image">
+              <div class="media-body tm-media-body tm-bg-gray">
+                <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{% trans "Europe" %}</h4>
+              </div>
+            </a>
+            <a href="#" class="media tm-media tm-recommended-item">
+              <img src="{% static 'img/tn-img-02.jpg' %}" alt="Image">
+              <div class="media-body tm-media-body tm-bg-gray">
+                <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{% trans "Asia" %}</h4>
+              </div>
+            </a>
+            <a href="#" class="media tm-media tm-recommended-item">
+              <img src="{% static 'img/tn-img-03.jpg' %}" alt="Image">
+              <div class="media-body tm-media-body tm-bg-gray">
+                <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{% trans "Africa" %}</h4>
+              </div>
+            </a>
+            <a href="#" class="media tm-media tm-recommended-item">
+              <img src="{% static 'img/tn-img-04.jpg' %}" alt="Image">
+              <div class="media-body tm-media-body tm-bg-gray">
+                <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">{% trans "South America" %}</h4>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 {% endblock %}
