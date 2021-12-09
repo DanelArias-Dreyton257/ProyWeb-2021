@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-04 10:42+0100\n"
-"PO-Revision-Date: 2021-12-04 10:46+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2021-12-09 09:48+0100\n"
+"PO-Revision-Date: 2021-12-09 09:48+0000\n"
+"Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
+"X-Translated-Using: django-rosetta 0.9.7\n"
 
 #: .\mammamiaApp\models.py:7 .\mammamiaApp\models.py:17
-#: .\mammamiaApp\models.py:28
+#: .\mammamiaApp\models.py:28 .\mammamiaApp\models.py:43
 msgid "name"
 msgstr "名前"
 
@@ -43,41 +44,63 @@ msgstr "オリジン"
 msgid "kcal"
 msgstr "kcal"
 
-#: .\mammamiaApp\models.py:29
+#: .\mammamiaApp\models.py:29 .\mammamiaApp\models.py:49
 msgid "price"
 msgstr "価格"
 
-#: .\mammamiaApp\templates\base.html:69
+#: .\mammamiaApp\models.py:44
+msgid "surname"
+msgstr "姓"
+
+#: .\mammamiaApp\models.py:45
+msgid "street"
+msgstr "住所"
+
+#: .\mammamiaApp\models.py:46
+msgid "postal code"
+msgstr "郵便番号"
+
+#: .\mammamiaApp\models.py:47
+msgid "telephone number"
+msgstr "電話番号"
+
+#: .\mammamiaApp\templates\base.html:71
 msgid "Home"
 msgstr "ホーム"
 
-#: .\mammamiaApp\templates\base.html:72
+#: .\mammamiaApp\templates\base.html:74
 #: .\mammamiaApp\templates\detalleIngrediente.html:19
 #: .\mammamiaApp\templates\detalleMasa.html:20
 #: .\mammamiaApp\templates\listaPizzas.html:5
 msgid "Pizzas"
 msgstr "ピッツァ"
 
-#: .\mammamiaApp\templates\base.html:75
+#: .\mammamiaApp\templates\base.html:77
 msgid "Doughs"
 msgstr "パン生地"
 
-#: .\mammamiaApp\templates\base.html:78
+#: .\mammamiaApp\templates\base.html:80
 #: .\mammamiaApp\templates\detallePizza.html:19
 #: .\mammamiaApp\templates\listaIngredientes.html:5
 msgid "Ingredients"
 msgstr "材料"
 
-#: .\mammamiaApp\templates\base.html:93
+#: .\mammamiaApp\templates\base.html:83
+msgid "Orders"
+msgstr "注文"
+
+#: .\mammamiaApp\templates\base.html:98
 msgid "Featured pizzas"
 msgstr "おすすめのピッツァ"
 
 #: .\mammamiaApp\templates\detalleBase.html:5
+#: .\mammamiaApp\templates\pedido.html:9
 #: .\mammamiaApp\templates\portada.html:9
 msgid "The best pizzas at the best price"
 msgstr "最高のピッツァを最高の価格で"
 
 #: .\mammamiaApp\templates\detalleBase.html:6
+#: .\mammamiaApp\templates\pedido.html:11
 #: .\mammamiaApp\templates\portada.html:11
 msgid "Pizzas of all flavors for all tastes"
 msgstr "すべての人のためのすべてのフレーバーのピッツァ"
@@ -119,6 +142,7 @@ msgid "Discover what pizzas we have with this dough."
 msgstr "この生地を使ってどんなピザができるのか見てみましょう."
 
 #: .\mammamiaApp\templates\detalleMasa.html:36
+#: .\mammamiaApp\templates\pedido.html:48
 msgid "No pizzas were found."
 msgstr "ピザは見つかりませんでした."
 
@@ -178,6 +202,77 @@ msgstr "生地は見つかりませんでした"
 msgid "For only"
 msgstr "たったの："
 
+#: .\mammamiaApp\templates\pedido.html:26
+msgid "Let's Start your order!"
+msgstr "注文を始めましょう！"
+
+#: .\mammamiaApp\templates\pedido.html:30
+msgid "Name"
+msgstr "名前"
+
+#: .\mammamiaApp\templates\pedido.html:35
+msgid "Surname"
+msgstr "姓"
+
+#: .\mammamiaApp\templates\pedido.html:38
+msgid "Street"
+msgstr "住所"
+
+#: .\mammamiaApp\templates\pedido.html:40
+msgid "Postal code"
+msgstr "郵便番号"
+
+#: .\mammamiaApp\templates\pedido.html:52
+#| msgid "Select the day and time you want to recieve your pizza"
+msgid "Select the day and time you want to receive your pizza"
+msgstr "ピザを受け取りたい日時を選択してください"
+
+#: .\mammamiaApp\templates\pedido.html:54
+msgid "Total price"
+msgstr "合計金額"
+
+#: .\mammamiaApp\templates\pedido.html:55
+msgid "Comments"
+msgstr "付注"
+
+#: .\mammamiaApp\templates\pedido.html:58
+msgid "Your order has been received."
+msgstr "ご注文は受信されました."
+
+#: .\mammamiaApp\templates\pedido.html:58
+msgid "Send Order Now"
+msgstr "今すぐ注文する"
+
+#: .\mammamiaApp\templates\pedido.html:70
+#: .\mammamiaApp\templates\portada.html:46
+msgid "Our Pizzas"
+msgstr "私たちのピザ"
+
+#: .\mammamiaApp\templates\pedido.html:71
+#: .\mammamiaApp\templates\portada.html:47
+msgid "In this places of the world"
+msgstr "世界のこの場所で"
+
+#: .\mammamiaApp\templates\pedido.html:77
+#: .\mammamiaApp\templates\portada.html:53
+msgid "Europe"
+msgstr "ヨーロッパ"
+
+#: .\mammamiaApp\templates\pedido.html:83
+#: .\mammamiaApp\templates\portada.html:59
+msgid "Asia"
+msgstr "アジア"
+
+#: .\mammamiaApp\templates\pedido.html:89
+#: .\mammamiaApp\templates\portada.html:65
+msgid "Africa"
+msgstr "アフリカ"
+
+#: .\mammamiaApp\templates\pedido.html:95
+#: .\mammamiaApp\templates\portada.html:71
+msgid "South America"
+msgstr "南アメリカ"
+
 #: .\mammamiaApp\templates\portada.html:27
 msgid "Dough"
 msgstr "パン生地"
@@ -189,30 +284,6 @@ msgstr "のみ:"
 #: .\mammamiaApp\templates\portada.html:35
 msgid "No doughs were found."
 msgstr "生地は見つかりませんでした."
-
-#: .\mammamiaApp\templates\portada.html:46
-msgid "Our Pizzas"
-msgstr "私たちのピザ"
-
-#: .\mammamiaApp\templates\portada.html:47
-msgid "In this places of the world"
-msgstr "世界のこの場所で"
-
-#: .\mammamiaApp\templates\portada.html:53
-msgid "Europe"
-msgstr "ヨーロッパ"
-
-#: .\mammamiaApp\templates\portada.html:59
-msgid "Asia"
-msgstr "アジア"
-
-#: .\mammamiaApp\templates\portada.html:65
-msgid "Africa"
-msgstr "アフリカ"
-
-#: .\mammamiaApp\templates\portada.html:71
-msgid "South America"
-msgstr "南アメリカ"
 
 #: .\mammamia\settings.py:125
 msgid "English"

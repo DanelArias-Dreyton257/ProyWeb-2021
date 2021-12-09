@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-04 10:42+0100\n"
-"PO-Revision-Date: 2021-12-04 10:42+0100\n"
-"Last-Translator: admin@admin.com\n"
+"POT-Creation-Date: 2021-12-09 09:48+0100\n"
+"PO-Revision-Date: 2021-12-09 09:48+0000\n"
+"Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.7\n"
 
 #: .\mammamiaApp\models.py:7 .\mammamiaApp\models.py:17
-#: .\mammamiaApp\models.py:28
+#: .\mammamiaApp\models.py:28 .\mammamiaApp\models.py:43
 msgid "name"
 msgstr "nombre"
 
@@ -44,41 +44,63 @@ msgstr "origen"
 msgid "kcal"
 msgstr "kcal"
 
-#: .\mammamiaApp\models.py:29
+#: .\mammamiaApp\models.py:29 .\mammamiaApp\models.py:49
 msgid "price"
 msgstr "precio"
 
-#: .\mammamiaApp\templates\base.html:69
+#: .\mammamiaApp\models.py:44
+msgid "surname"
+msgstr "apellido"
+
+#: .\mammamiaApp\models.py:45
+msgid "street"
+msgstr "calle"
+
+#: .\mammamiaApp\models.py:46
+msgid "postal code"
+msgstr "código postal"
+
+#: .\mammamiaApp\models.py:47
+msgid "telephone number"
+msgstr "número de teléfono"
+
+#: .\mammamiaApp\templates\base.html:71
 msgid "Home"
 msgstr "Inicio"
 
-#: .\mammamiaApp\templates\base.html:72
+#: .\mammamiaApp\templates\base.html:74
 #: .\mammamiaApp\templates\detalleIngrediente.html:19
 #: .\mammamiaApp\templates\detalleMasa.html:20
 #: .\mammamiaApp\templates\listaPizzas.html:5
 msgid "Pizzas"
 msgstr "Pizzas"
 
-#: .\mammamiaApp\templates\base.html:75
+#: .\mammamiaApp\templates\base.html:77
 msgid "Doughs"
 msgstr "Masas"
 
-#: .\mammamiaApp\templates\base.html:78
+#: .\mammamiaApp\templates\base.html:80
 #: .\mammamiaApp\templates\detallePizza.html:19
 #: .\mammamiaApp\templates\listaIngredientes.html:5
 msgid "Ingredients"
 msgstr "Ingredientes"
 
-#: .\mammamiaApp\templates\base.html:93
+#: .\mammamiaApp\templates\base.html:83
+msgid "Orders"
+msgstr "Pedidos"
+
+#: .\mammamiaApp\templates\base.html:98
 msgid "Featured pizzas"
 msgstr "Pizzas destacadas"
 
 #: .\mammamiaApp\templates\detalleBase.html:5
+#: .\mammamiaApp\templates\pedido.html:9
 #: .\mammamiaApp\templates\portada.html:9
 msgid "The best pizzas at the best price"
 msgstr "Las mejores pizzas al mejor precio"
 
 #: .\mammamiaApp\templates\detalleBase.html:6
+#: .\mammamiaApp\templates\pedido.html:11
 #: .\mammamiaApp\templates\portada.html:11
 msgid "Pizzas of all flavors for all tastes"
 msgstr "Pizzas de todos los sabores para todos los gustos"
@@ -120,6 +142,7 @@ msgid "Discover what pizzas we have with this dough."
 msgstr "Descubre que pizzas tienen esta masa."
 
 #: .\mammamiaApp\templates\detalleMasa.html:36
+#: .\mammamiaApp\templates\pedido.html:48
 msgid "No pizzas were found."
 msgstr "No se han encontrado pizzas."
 
@@ -179,6 +202,77 @@ msgstr "No se han encontrado masas."
 msgid "For only"
 msgstr "Solo por"
 
+#: .\mammamiaApp\templates\pedido.html:26
+msgid "Let's Start your order!"
+msgstr "¡Empezemos tu pedido!"
+
+#: .\mammamiaApp\templates\pedido.html:30
+msgid "Name"
+msgstr "Nombre"
+
+#: .\mammamiaApp\templates\pedido.html:35
+msgid "Surname"
+msgstr "Apellido"
+
+#: .\mammamiaApp\templates\pedido.html:38
+msgid "Street"
+msgstr "Calle"
+
+#: .\mammamiaApp\templates\pedido.html:40
+msgid "Postal code"
+msgstr "Código postal"
+
+#: .\mammamiaApp\templates\pedido.html:52
+#| msgid "Select the day and time you want to recieve your pizza"
+msgid "Select the day and time you want to receive your pizza"
+msgstr "Elige el día y la hora de recibimiento de la pizza"
+
+#: .\mammamiaApp\templates\pedido.html:54
+msgid "Total price"
+msgstr "Precio total"
+
+#: .\mammamiaApp\templates\pedido.html:55
+msgid "Comments"
+msgstr "Comentarios"
+
+#: .\mammamiaApp\templates\pedido.html:58
+msgid "Your order has been received."
+msgstr "Tu pedido ha sido recibido."
+
+#: .\mammamiaApp\templates\pedido.html:58
+msgid "Send Order Now"
+msgstr "Realiza el Pedido Ahora"
+
+#: .\mammamiaApp\templates\pedido.html:70
+#: .\mammamiaApp\templates\portada.html:46
+msgid "Our Pizzas"
+msgstr "Nuestras pizzas"
+
+#: .\mammamiaApp\templates\pedido.html:71
+#: .\mammamiaApp\templates\portada.html:47
+msgid "In this places of the world"
+msgstr "En estos lugares del mundo"
+
+#: .\mammamiaApp\templates\pedido.html:77
+#: .\mammamiaApp\templates\portada.html:53
+msgid "Europe"
+msgstr "Europa"
+
+#: .\mammamiaApp\templates\pedido.html:83
+#: .\mammamiaApp\templates\portada.html:59
+msgid "Asia"
+msgstr "Asia"
+
+#: .\mammamiaApp\templates\pedido.html:89
+#: .\mammamiaApp\templates\portada.html:65
+msgid "Africa"
+msgstr "África"
+
+#: .\mammamiaApp\templates\pedido.html:95
+#: .\mammamiaApp\templates\portada.html:71
+msgid "South America"
+msgstr "América del sur"
+
 #: .\mammamiaApp\templates\portada.html:27
 msgid "Dough"
 msgstr "Masa"
@@ -190,30 +284,6 @@ msgstr "Solo por"
 #: .\mammamiaApp\templates\portada.html:35
 msgid "No doughs were found."
 msgstr "No se han encontrado masas."
-
-#: .\mammamiaApp\templates\portada.html:46
-msgid "Our Pizzas"
-msgstr "Nuestras pizzas"
-
-#: .\mammamiaApp\templates\portada.html:47
-msgid "In this places of the world"
-msgstr "En estos lugares del mundo"
-
-#: .\mammamiaApp\templates\portada.html:53
-msgid "Europe"
-msgstr "Europa"
-
-#: .\mammamiaApp\templates\portada.html:59
-msgid "Asia"
-msgstr "Asia"
-
-#: .\mammamiaApp\templates\portada.html:65
-msgid "Africa"
-msgstr "África"
-
-#: .\mammamiaApp\templates\portada.html:71
-msgid "South America"
-msgstr "América del sur"
 
 #: .\mammamia\settings.py:125
 msgid "English"
@@ -234,6 +304,9 @@ msgstr "Japonés"
 #: .\mammamia\urls.py:22
 msgid "admin/"
 msgstr ""
+
+#~ msgid "Postal_code"
+#~ msgstr "Codigo_Postal"
 
 #~ msgid "dough"
 #~ msgstr "masa"
