@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 09:48+0100\n"
-"PO-Revision-Date: 2021-12-09 09:48+0000\n"
+"POT-Creation-Date: 2021-12-10 08:27+0100\n"
+"PO-Revision-Date: 2021-12-10 08:34+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -92,6 +92,10 @@ msgstr "注文"
 #: .\mammamiaApp\templates\base.html:98
 msgid "Featured pizzas"
 msgstr "おすすめのピッツァ"
+
+#: .\mammamiaApp\templates\base.html:122
+msgid "Language"
+msgstr "言語"
 
 #: .\mammamiaApp\templates\detalleBase.html:5
 #: .\mammamiaApp\templates\pedido.html:9
@@ -187,7 +191,7 @@ msgstr "成分は見つかりませんでした"
 
 #: .\mammamiaApp\templates\listaMasas.html:5
 msgid "Doughs "
-msgstr "パン生地"
+msgstr "パン生地 "
 
 #: .\mammamiaApp\templates\listaMasas.html:12
 msgid "Suplement of"
@@ -196,7 +200,7 @@ msgstr "補足 :"
 #: .\mammamiaApp\templates\listaMasas.html:16
 #: .\mammamiaApp\templates\listaPizzas.html:19
 msgid "No doughs have been found."
-msgstr "生地は見つかりませんでした"
+msgstr "生地は見つかりませんでした."
 
 #: .\mammamiaApp\templates\listaPizzas.html:14
 msgid "For only"
@@ -223,7 +227,6 @@ msgid "Postal code"
 msgstr "郵便番号"
 
 #: .\mammamiaApp\templates\pedido.html:52
-#| msgid "Select the day and time you want to recieve your pizza"
 msgid "Select the day and time you want to receive your pizza"
 msgstr "ピザを受け取りたい日時を選択してください"
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 09:48+0100\n"
-"PO-Revision-Date: 2021-12-09 09:48+0000\n"
+"POT-Creation-Date: 2021-12-10 08:27+0100\n"
+"PO-Revision-Date: 2021-12-10 08:33+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -92,6 +92,10 @@ msgstr "Pedidos"
 #: .\mammamiaApp\templates\base.html:98
 msgid "Featured pizzas"
 msgstr "Pizzas destacadas"
+
+#: .\mammamiaApp\templates\base.html:122
+msgid "Language"
+msgstr "Idioma"
 
 #: .\mammamiaApp\templates\detalleBase.html:5
 #: .\mammamiaApp\templates\pedido.html:9
@@ -223,7 +227,6 @@ msgid "Postal code"
 msgstr "Código postal"
 
 #: .\mammamiaApp\templates\pedido.html:52
-#| msgid "Select the day and time you want to recieve your pizza"
 msgid "Select the day and time you want to receive your pizza"
 msgstr "Elige el día y la hora de recibimiento de la pizza"
 

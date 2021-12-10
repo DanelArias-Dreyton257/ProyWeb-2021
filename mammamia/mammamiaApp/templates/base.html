@@ -78,9 +78,25 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'ingredientes' %}">{% trans "Ingredients" %}</a>
-                </li>                
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'pedido' %}">{% trans "Orders" %}</a>
+                </li>
+                <li class="nav-item">
+
+                  {% get_current_language as CURRENT_LANGUAGE %}
+                  {% get_available_languages as AVAILABLE_LANGUAGES %}
+                  {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+
+                    <select class="form-control tm-select nav-item" onchange="location = this.value">
+                      {% for language in languages %}
+                        <option  class ="nav-link" value="/{{ language.code }}{{request.path|slice:'3:'}}" {% if language.code == CURRENT_LANGUAGE %} selected="yes" {% endif %}>
+                            {{ language.name_local }}
+                        </option>
+                      {% endfor %}
+
+                    </select>
+
                 </li>
               </ul>
             </div>
@@ -114,6 +130,7 @@
     <footer class="tm-bg-dark-blue">
       <div class="container">
         <div class="row">
+
           <p class="col-sm-12 text-center tm-font-light tm-color-white p-4 tm-margin-b-0">
             Copyright &copy; <span class="tm-current-year">2021</span> Mamma Mia Co.
 
