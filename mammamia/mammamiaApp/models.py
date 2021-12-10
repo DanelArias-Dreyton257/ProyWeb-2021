@@ -28,7 +28,6 @@ class Pizza(models.Model):
     nombre = models.CharField(_('name'),max_length=50)
     precio = models.DecimalField(_('price'),decimal_places=2, default=0, max_digits=5)
     masa = models.ForeignKey(Masa, on_delete=models.CASCADE)
-
     ingredientes = models.ManyToManyField(Ingrediente, related_name='pizzas')
 
 
