@@ -7,4 +7,3 @@ from .models import *
 admin.site.register(Masa)
 admin.site.register(Pizza)
 admin.site.register(Ingrediente)
-admin.site.register(Pedido)

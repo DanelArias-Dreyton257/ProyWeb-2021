@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from .models import *
 from django.views.generic import *
+from . import forms
+from django.core.mail import send_mail
+from mammamia.settings import EMAIL_HOST_USER
 
 
 # Vistas basadas en funciones
@@ -8,16 +11,16 @@ from django.views.generic import *
 # Esta funcion mostrara una portada, la cual, aparecera una lista de masas, con una pizza por cada masa
 # def portada(request):
 #     lista_m = get_list_or_404(Masa)
-# 
+#
 #     lista_min_p = []
 #     for masa in lista_m: #Busca las pizzas mas baratas de cada masa
 #         lista_min_p.append(min(masa.pizza_set.all()))
-# 
+#
 #     context = {
 #        'lista_min_p' : lista_min_p,
 #     }
 #     return render(request,'portada.html', context)
-# 
+#
 # Esta funcion mostrara un listado de todas las pizzas
 # def listaPizzas(request):
 #     lista = get_list_or_404(Pizza.objects.all().order_by('nombre'))
@@ -25,7 +28,7 @@ from django.views.generic import *
 #         'lista_pizzas': lista,
 #     }
 #     return render(request,'listaPizzas.html', context)
-# 
+#
 # Esta funcion mostrara un listado de todas las masas
 # def listaMasas(request):
 #     lista = get_list_or_404(Masa.objects.all().order_by('nombre'))
@@ -41,34 +44,34 @@ from django.views.generic import *
 #         'lista_ingredientes': lista,
 #     }
 #     return render(request,'listaIngredientes.html', context)
-# 
+#
 # Esta funcion mostrara todos los detalles de la pizza
 # def detallePizza(request, id_pizza):
 #     pizza = get_object_or_404(Pizza, pk=id_pizza)
-# 
+#
 #     context = {
 #         'pizza' :pizza,
 #     }
 #     return render(request,'detallePizza.html', context)
-# 
+#
 # Esta funcion mostrara todos los detalles de la masa
 # def detalleMasa(request, id_masa):
 #     masa = get_object_or_404(Masa, pk=id_masa)
-# 
+#
 #     context = {
 #         'masa' :masa,
 #     }
 #     return render(request,'detalleMasa.html', context)
-# 
+#
 # Esta funcion mostrara todos los detalles de los ingredientes
 # def detalleIngrediente(request, id_ingrediente):
 #     ingrediente = get_object_or_404(Ingrediente, pk=id_ingrediente)
-# 
+#
 #     context = {
 #         'ingrediente' :ingrediente,
 #     }
 #     return render(request,'detalleIngrediente.html', context)
-# 
+#
 # Vistas basadas en clases
 
 # Esta funcion mostrara una portada, la cual, aparecera una lista de masas, con una pizza por cada masa
@@ -107,28 +110,41 @@ class ListaIngredientes(ListView):
     context_object_name = "lista_ingredientes"
 
 # Esta funcion mostrara todos los detalles de la pizza
-class DetallePizza(DetailView):  
+class DetallePizza(DetailView):
     model = Pizza
     template_name = "detallePizza.html"
     context_object_name = "pizza"
 
 
 # Esta funcion mostrara todos los detalles de la masa
-class DetalleMasa(DetailView):  
+class DetalleMasa(DetailView):
     model = Masa
     template_name = "detalleMasa.html"
     context_object_name = "masa"
 
 # Esta funcion mostrara todos los detalles de los ingredientes
-class DetalleIngrediente(DetailView):  
+class DetalleIngrediente(DetailView):
     model = Ingrediente
     template_name = "detalleIngrediente.html"
     context_object_name = "ingrediente"
 
-# Esta funcion mostrara un formulario en el que poder realizar un pedido 
-class Pedido(ListView):  
-    model = Pedido
+def pedido(request):
+
+    #form
+    ped = forms.Pedido()
+    if request.method == 'POST':
+        ped = forms.Pedido(request.POST)
+        subject = 'Hola ' + ped['nombre'].value()
+        message = 'Precio: ' + str(ped['precio'].value())
+        recepient = str(ped['email'].value())
+        send_mail(subject,
+            message, EMAIL_HOST_USER, [recepient], fail_silently = False)
+        return render(request, 'success.html', {'recepient': recepient, 'subject': subject, 'message':message})
+
     lista_p = get_list_or_404(Pizza)
-    queryset = lista_p
-    template_name = "pedido.html"
-    context_object_name = "lista_p"
+    context = {
+        'lista_p': lista_p,
+        'form' : ped
+    }
+
+    return render(request,'pedido.html',context)
