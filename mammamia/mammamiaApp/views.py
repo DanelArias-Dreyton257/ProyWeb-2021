@@ -134,8 +134,8 @@ def pedido(request):
     ped = forms.Pedido()
     if request.method == 'POST':
         ped = forms.Pedido(request.POST)
-        subject = 'Hola ' + ped['nombre'].value()
-        message = 'Precio: ' + str(ped['precio'].value())
+        subject = 'Tu pedido en MammaMia ha sido recibido'
+        message = 'Hola {} {}.\nTu pedido se ha recibido correctamente.\nHa costado: {}€\nSe le enviarán a esta dirección: {} con cod.postal: {}\nSi hay cualquier problema se le contactará al siguiente numero de teléfono: {} o a este mismo correo.'.format(ped['nombre'].value(), ped['apellido'].value(),str(ped['precio'].value()),ped['calle'].value(),str(ped['cPostal'].value()),ped['nTelefono'])
         recepient = str(ped['email'].value())
         send_mail(subject,
             message, EMAIL_HOST_USER, [recepient], fail_silently = False)
