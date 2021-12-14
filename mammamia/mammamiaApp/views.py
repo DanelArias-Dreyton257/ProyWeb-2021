@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from .models import *
 from django.views.generic import *
-from . import forms
 from django.core.mail import send_mail
 from mammamia.settings import EMAIL_HOST_USER
 
@@ -128,23 +127,38 @@ class DetalleIngrediente(DetailView):
     template_name = "detalleIngrediente.html"
     context_object_name = "ingrediente"
 
+
+def calcularPrecio(request):
+    lista_p = get_list_or_404(Pizza)
+
+    #for (pizza in lista_p):
+
+
+    return 100
+
+
 def pedido(request):
 
+    lista_p = get_list_or_404(Pizza)
     #form
-    ped = forms.Pedido()
     if request.method == 'POST':
-        ped = forms.Pedido(request.POST)
         subject = 'Tu pedido en MammaMia ha sido recibido'
-        message = 'Hola {} {}.\nTu pedido se ha recibido correctamente.\nHa costado: {}€\nSe le enviarán a esta dirección: {} con cod.postal: {}\nSi hay cualquier problema se le contactará al siguiente numero de teléfono: {} o a este mismo correo.'.format(ped['nombre'].value(), ped['apellido'].value(),str(ped['precio'].value()),ped['calle'].value(),str(ped['cPostal'].value()),ped['nTelefono'])
-        recepient = str(ped['email'].value())
+        precio=calcularPrecio(request)
+        message = 'Hola {} {}.\nTu pedido se ha recibido correctamente.\nHa costado: {}€\nSe le enviarán el {} a esta dirección: {} con cod.postal: {}\nSi hay cualquier problema se le contactará a este mismo correo.'.format(
+            request.POST.get('contact_name',''),
+            request.POST.get('contact_surname',''),
+            str(precio),
+            str(request.POST.get('hyt','')), #faltaria formatear la hora
+            request.POST.get('contact_street',''),
+            str(request.POST.get('contact_pCode',''))
+        )
+        recepient = request.POST.get('contact_email','')
         send_mail(subject,
             message, EMAIL_HOST_USER, [recepient], fail_silently = False)
         return render(request, 'success.html', {'recepient': recepient, 'subject': subject, 'message':message})
 
-    lista_p = get_list_or_404(Pizza)
     context = {
         'lista_p': lista_p,
-        'form' : ped
     }
 
     return render(request,'pedido.html',context)
