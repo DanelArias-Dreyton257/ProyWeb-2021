@@ -26,15 +26,7 @@ Mamma Mia
               <div class="form-group">
                 <h3 class="text-uppercase tm-article-title-2">{% trans "Let's Start your order!" %}</h3>
               </div>
-              {% for field in form.visible_fields %}
-                <div class="form-group">
-                  <span  class="form-control">
-                    {{ field.label_tag }}
-                    {{field}}
-                    </span>
-                </div>
-              {% endfor %}
-                <!--
+
                 <div class="form-group">
                   <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder={% trans "Name" %}
                     required="">
@@ -66,7 +58,7 @@ Mamma Mia
                   <input type="datetime-local" class="form-control" id="hyt" name="hyt"required=""> <br>
                   <label  class="form-control" >{% trans "Total price" %}:  €</label>
                   <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder={% trans "Comments" %} ></textarea>
-                </div>-->
+                </div>
                 {% csrf_token %}
 
                 <button type="submit" class="btn btn-primary tm-btn-primary" on-click=enviado({% trans "Your order has been received." %},contact_name, 5 , contact_street)>{% trans "Send Order Now" %}</button>
