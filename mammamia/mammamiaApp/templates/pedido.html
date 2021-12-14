@@ -46,9 +46,8 @@ Mamma Mia
                 </div>
                 <div class="form-group">
                   {% for pizza in lista_p|dictsort:"nombre" %}
-                  <input type="checkbox" name="{{pizza.nombre}}" value="{{pizza.id}}">
-                  <input type="number" for="{{pizza.nombre}}" id="quantity" name="quantity-{{pizza.nombre}}" min="1" max="10">
-                  <label for="{{pizza.nombre}}"> <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}}</a></label><br>
+                  <input type="number" for="{{pizza.nombre|lower|cut:" "}}" id="quantity" name="q-{{pizza.nombre|lower|cut:" "}}" min="1" max="10">
+                  <label for="{{pizza.nombre|lower|cut:" "}}"> <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}}</a></label><br>
                   {% empty %}
                   <p>{% trans "No pizzas were found." %}</p>
                   {% endfor %}<br>
