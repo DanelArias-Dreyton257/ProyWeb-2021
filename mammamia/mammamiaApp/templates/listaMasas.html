@@ -5,7 +5,7 @@
 {% block models %} {% trans "Doughs " %}{% endblock %} <!--Detalla el nombre del titulo-->
 
 {% block listaItems %} <!--Detalla la lista de masas-->
-  {% for masa in lista_masas %}
+  {% for masa in lista_masas|dictsort:"nombre"  %}
   <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
     <img src="{% static 'img/' %}masa-{{masa.nombre|lower|cut:" "}}.jpg" alt="{{masa.nombre}}" class="img-fluid img-lista">
     <h3 class="tm-color-primary tm-article-title-1">{{masa.nombre}}</h3>

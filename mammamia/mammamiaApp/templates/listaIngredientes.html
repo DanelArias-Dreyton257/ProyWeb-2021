@@ -5,7 +5,7 @@
 {% block models %} {% trans "Ingredients" %} {% endblock %} <!--Detalla el nombre del titulo-->
 
 {% block listaItems %} <!--Detalla la lista de ingredientes-->
-  {% for ingrediente in lista_ingredientes %}
+  {% for ingrediente in lista_ingredientes|dictsort:"nombre"  %}
   <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
     <img src="{% static 'img/' %}ingrediente-{{ingrediente.nombre|lower|cut:" "}}.jpg" class="img-fluid img-lista" alt="{{ingrediente.nombre}}">
     <h3 class="tm-color-primary tm-article-title-1">{{ingrediente.nombre}}</h3>
