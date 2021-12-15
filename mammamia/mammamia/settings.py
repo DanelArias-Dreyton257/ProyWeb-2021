@@ -136,8 +136,8 @@ LOCALE_PATHS = [
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'deusto.sd@gmail.com'
-EMAIL_HOST_PASSWORD = 'softwaredesign'
+EMAIL_HOST_USER = 'mammamia.pizzeria.info@gmail.com'
+EMAIL_HOST_PASSWORD = 'mammamia1234'
 
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from .models import *
 from django.views.generic import *
-from django.core.mail import send_mail
+from django.core.mail import send_mail, send_mass_mail
 from mammamia.settings import EMAIL_HOST_USER
 
 
@@ -128,7 +128,7 @@ class DetalleIngrediente(DetailView):
     context_object_name = "ingrediente"
 
 
-def calcularPrecio(request):
+def calcularPrecio(post):
     lista_p = get_list_or_404(Pizza)
 
     #for (pizza in lista_p):
@@ -136,26 +136,58 @@ def calcularPrecio(request):
 
     return 100
 
+def correoUsuario(post):
+
+    subject = 'Tu pedido en MammaMia ha sido recibido'
+    precio=calcularPrecio(post)
+    message = 'Hola {} {}.\nTu pedido se ha recibido correctamente.\nHa costado: {}€\nSe le enviarán el {} a esta dirección: {} con cod.postal: {}\nSi hay cualquier problema se le contactará a este mismo correo.'.format(
+        post.get('contact_name',''),
+        post.get('contact_surname',''),
+        str(precio),
+        str(post.get('hyt','')), #faltaria formatear la hora
+        post.get('contact_street',''),
+        str(post.get('contact_pCode',''))
+    )
+    recepient = post.get('contact_email','')
+
+    dir = {
+        'subject':subject,
+        'message': message,
+        'recepient': recepient
+    }
+
+    return dir
+
+def correoEmpresa(post):
+    subject='A order has been placed'
+    message='This a test message for myself'
+    recepient = EMAIL_HOST_USER
+
+    dir = {
+        'subject':subject,
+        'message': message,
+        'recepient': recepient
+    }
+
+    return dir
 
 def pedido(request):
 
     lista_p = get_list_or_404(Pizza)
     #form
     if request.method == 'POST':
-        subject = 'Tu pedido en MammaMia ha sido recibido'
-        precio=calcularPrecio(request)
-        message = 'Hola {} {}.\nTu pedido se ha recibido correctamente.\nHa costado: {}€\nSe le enviarán el {} a esta dirección: {} con cod.postal: {}\nSi hay cualquier problema se le contactará a este mismo correo.'.format(
-            request.POST.get('contact_name',''),
-            request.POST.get('contact_surname',''),
-            str(precio),
-            str(request.POST.get('hyt','')), #faltaria formatear la hora
-            request.POST.get('contact_street',''),
-            str(request.POST.get('contact_pCode',''))
+
+        dirU = correoUsuario(request.POST)
+        dirE = correoEmpresa(request.POST)
+
+        datatuple = (
+            (dirU['subject'], dirU['message'], EMAIL_HOST_USER, [dirU['recepient']]),
+            (dirE['subject'], dirE['message'], EMAIL_HOST_USER, [dirE['recepient']]),
         )
-        recepient = request.POST.get('contact_email','')
-        send_mail(subject,
-            message, EMAIL_HOST_USER, [recepient], fail_silently = False)
-        return render(request, 'success.html', {'recepient': recepient, 'subject': subject, 'message':message})
+
+        send_mass_mail(datatuple, fail_silently = False)
+
+        return render(request, 'success.html', {'recepient': dirU['recepient']})
 
     context = {
         'lista_p': lista_p,
