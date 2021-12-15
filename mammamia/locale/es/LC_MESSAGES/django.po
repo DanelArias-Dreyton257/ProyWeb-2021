@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-15 13:40+0100\n"
-"PO-Revision-Date: 2021-12-15 13:39+0000\n"
+"POT-Creation-Date: 2021-12-15 22:22+0100\n"
+"PO-Revision-Date: 2021-12-15 22:22+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -284,6 +284,11 @@ msgstr "Consulte su correo electrónico para obtener más detalles."
 msgid "Email sent to:"
 msgstr "Correo enviado a:"
 
+#: .\mammamiaApp\views.py:166
+#| msgid "Your order has been received."
+msgid "Your MammaMia order has been received."
+msgstr "Tu pedido MammaMia ha sido recibido."
+
 #: .\mammamiaApp\views.py:171
 msgid "Hello {} {}.\n"
 msgstr "Hola {} {}.\n"
@@ -333,15 +338,12 @@ msgstr "Japonés"
 msgid "admin/"
 msgstr ""
 
-#~| msgid "Orders"
 #~ msgid "Order:\n"
 #~ msgstr "Pedidos:\n"
 
-#~| msgid "Pizzas"
 #~ msgid "\tPizzas: {}"
 #~ msgstr "Pizzas: {}"
 
-#~| msgid "Comments"
 #~ msgid "\tComments:\n"
 #~ msgstr "Comentarios:\n"
 

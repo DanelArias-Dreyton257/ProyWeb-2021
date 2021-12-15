@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-15 13:40+0100\n"
-"PO-Revision-Date: 2021-12-15 13:44+0000\n"
+"POT-Creation-Date: 2021-12-15 22:22+0100\n"
+"PO-Revision-Date: 2021-12-15 22:23+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -273,7 +273,6 @@ msgid "No doughs were found."
 msgstr "Non sono stati trovati impasti."
 
 #: .\mammamiaApp\templates\success.html:9
-#| msgid "Your order has been received."
 msgid "Your order has been received!"
 msgstr "Il suo ordine è stato ricevuto!"
 
@@ -285,12 +284,16 @@ msgstr "Controlla la tua email per ulteriori dettagli."
 msgid "Email sent to:"
 msgstr "Email inviata a:"
 
+#: .\mammamiaApp\views.py:166
+#| msgid "Your order has been received."
+msgid "Your MammaMia order has been received."
+msgstr "Il tuo ordine MammaMia è stato ricevuto."
+
 #: .\mammamiaApp\views.py:171
 msgid "Hello {} {}.\n"
 msgstr "Ciao {} {}.\n"
 
 #: .\mammamiaApp\views.py:172
-#| msgid "Your order has been received."
 msgid "Your order has been successfully received.\n"
 msgstr "Il suo ordine è stato ricevuto con successo.\n"
 

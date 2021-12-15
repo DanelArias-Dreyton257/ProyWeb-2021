@@ -163,7 +163,7 @@ def listaPedidasToStr(lsPizzas, lsCants):
     return str
 def correoUsuario(post, numPedido):
 
-    subject = 'Your MammaMia order has been received. N:{}'.format(numPedido)
+    subject = _('Your MammaMia order has been received.')+' N:{}'.format(numPedido)
 
     dirPedido=pizzasPedidas(post)
     datePart = str(post.get('hyt','')).split('T')
