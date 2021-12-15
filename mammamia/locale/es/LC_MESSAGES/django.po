@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-10 08:27+0100\n"
-"PO-Revision-Date: 2021-12-10 08:33+0000\n"
+"POT-Creation-Date: 2021-12-15 13:40+0100\n"
+"PO-Revision-Date: 2021-12-15 13:39+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.7\n"
 
 #: .\mammamiaApp\models.py:7 .\mammamiaApp\models.py:17
-#: .\mammamiaApp\models.py:28 .\mammamiaApp\models.py:43
+#: .\mammamiaApp\models.py:28
 msgid "name"
 msgstr "nombre"
 
@@ -44,25 +44,9 @@ msgstr "origen"
 msgid "kcal"
 msgstr "kcal"
 
-#: .\mammamiaApp\models.py:29 .\mammamiaApp\models.py:49
+#: .\mammamiaApp\models.py:29
 msgid "price"
 msgstr "precio"
-
-#: .\mammamiaApp\models.py:44
-msgid "surname"
-msgstr "apellido"
-
-#: .\mammamiaApp\models.py:45
-msgid "street"
-msgstr "calle"
-
-#: .\mammamiaApp\models.py:46
-msgid "postal code"
-msgstr "código postal"
-
-#: .\mammamiaApp\models.py:47
-msgid "telephone number"
-msgstr "número de teléfono"
 
 #: .\mammamiaApp\templates\base.html:71
 msgid "Home"
@@ -89,13 +73,9 @@ msgstr "Ingredientes"
 msgid "Orders"
 msgstr "Pedidos"
 
-#: .\mammamiaApp\templates\base.html:98
+#: .\mammamiaApp\templates\base.html:114
 msgid "Featured pizzas"
 msgstr "Pizzas destacadas"
-
-#: .\mammamiaApp\templates\base.html:122
-msgid "Language"
-msgstr "Idioma"
 
 #: .\mammamiaApp\templates\detalleBase.html:5
 #: .\mammamiaApp\templates\pedido.html:9
@@ -146,7 +126,7 @@ msgid "Discover what pizzas we have with this dough."
 msgstr "Descubre que pizzas tienen esta masa."
 
 #: .\mammamiaApp\templates\detalleMasa.html:36
-#: .\mammamiaApp\templates\pedido.html:48
+#: .\mammamiaApp\templates\pedido.html:52
 msgid "No pizzas were found."
 msgstr "No se han encontrado pizzas."
 
@@ -206,72 +186,76 @@ msgstr "No se han encontrado masas."
 msgid "For only"
 msgstr "Solo por"
 
-#: .\mammamiaApp\templates\pedido.html:26
+#: .\mammamiaApp\templates\pedido.html:27
 msgid "Let's Start your order!"
 msgstr "¡Empezemos tu pedido!"
 
-#: .\mammamiaApp\templates\pedido.html:30
+#: .\mammamiaApp\templates\pedido.html:31
 msgid "Name"
 msgstr "Nombre"
 
-#: .\mammamiaApp\templates\pedido.html:35
+#: .\mammamiaApp\templates\pedido.html:36
 msgid "Surname"
 msgstr "Apellido"
 
-#: .\mammamiaApp\templates\pedido.html:38
+#: .\mammamiaApp\templates\pedido.html:40
+msgid "E-mail"
+msgstr "Correo electrónico"
+
+#: .\mammamiaApp\templates\pedido.html:43
 msgid "Street"
 msgstr "Calle"
 
-#: .\mammamiaApp\templates\pedido.html:40
+#: .\mammamiaApp\templates\pedido.html:45
 msgid "Postal code"
 msgstr "Código postal"
 
-#: .\mammamiaApp\templates\pedido.html:52
+#: .\mammamiaApp\templates\pedido.html:56
 msgid "Select the day and time you want to receive your pizza"
 msgstr "Elige el día y la hora de recibimiento de la pizza"
 
-#: .\mammamiaApp\templates\pedido.html:54
+#: .\mammamiaApp\templates\pedido.html:58
 msgid "Total price"
 msgstr "Precio total"
 
-#: .\mammamiaApp\templates\pedido.html:55
+#: .\mammamiaApp\templates\pedido.html:59
 msgid "Comments"
 msgstr "Comentarios"
 
-#: .\mammamiaApp\templates\pedido.html:58
+#: .\mammamiaApp\templates\pedido.html:63
 msgid "Your order has been received."
 msgstr "Tu pedido ha sido recibido."
 
-#: .\mammamiaApp\templates\pedido.html:58
+#: .\mammamiaApp\templates\pedido.html:63
 msgid "Send Order Now"
 msgstr "Realiza el Pedido Ahora"
 
-#: .\mammamiaApp\templates\pedido.html:70
+#: .\mammamiaApp\templates\pedido.html:76
 #: .\mammamiaApp\templates\portada.html:46
 msgid "Our Pizzas"
 msgstr "Nuestras pizzas"
 
-#: .\mammamiaApp\templates\pedido.html:71
+#: .\mammamiaApp\templates\pedido.html:77
 #: .\mammamiaApp\templates\portada.html:47
 msgid "In this places of the world"
 msgstr "En estos lugares del mundo"
 
-#: .\mammamiaApp\templates\pedido.html:77
+#: .\mammamiaApp\templates\pedido.html:83
 #: .\mammamiaApp\templates\portada.html:53
 msgid "Europe"
 msgstr "Europa"
 
-#: .\mammamiaApp\templates\pedido.html:83
+#: .\mammamiaApp\templates\pedido.html:89
 #: .\mammamiaApp\templates\portada.html:59
 msgid "Asia"
 msgstr "Asia"
 
-#: .\mammamiaApp\templates\pedido.html:89
+#: .\mammamiaApp\templates\pedido.html:95
 #: .\mammamiaApp\templates\portada.html:65
 msgid "Africa"
 msgstr "África"
 
-#: .\mammamiaApp\templates\pedido.html:95
+#: .\mammamiaApp\templates\pedido.html:101
 #: .\mammamiaApp\templates\portada.html:71
 msgid "South America"
 msgstr "América del sur"
@@ -287,6 +271,47 @@ msgstr "Solo por"
 #: .\mammamiaApp\templates\portada.html:35
 msgid "No doughs were found."
 msgstr "No se han encontrado masas."
+
+#: .\mammamiaApp\templates\success.html:9
+msgid "Your order has been received!"
+msgstr "Tu pedido ha sido recibido!"
+
+#: .\mammamiaApp\templates\success.html:11
+msgid "Please check your email for further detail."
+msgstr "Consulte su correo electrónico para obtener más detalles."
+
+#: .\mammamiaApp\templates\success.html:12
+msgid "Email sent to:"
+msgstr "Correo enviado a:"
+
+#: .\mammamiaApp\views.py:171
+msgid "Hello {} {}.\n"
+msgstr "Hola {} {}.\n"
+
+#: .\mammamiaApp\views.py:172
+msgid "Your order has been successfully received.\n"
+msgstr "Tu pedido ha sido recibido satisfactoriamente.\n"
+
+#: .\mammamiaApp\views.py:173
+msgid "The order contains: {}"
+msgstr "El pedido contiene: {}"
+
+#: .\mammamiaApp\views.py:174
+msgid "The total cost of the order was: {}€\n"
+msgstr "El coste total del pedido fue: {}€\n"
+
+#: .\mammamiaApp\views.py:175
+msgid ""
+"They will be sent on {} at {} to this address: {} with postal code: {}.\n"
+msgstr ""
+"Se enviarán el {} a las {} a esta dirección: {} con código postal: {}.\n"
+
+#: .\mammamiaApp\views.py:176
+msgid ""
+"If there are any problems you will be contacted at this same email address."
+msgstr ""
+"Si hay algún problema, nos pondremos en contacto con usted en esta misma "
+"dirección de correo electrónico."
 
 #: .\mammamia\settings.py:125
 msgid "English"
@@ -307,6 +332,33 @@ msgstr "Japonés"
 #: .\mammamia\urls.py:22
 msgid "admin/"
 msgstr ""
+
+#~| msgid "Orders"
+#~ msgid "Order:\n"
+#~ msgstr "Pedidos:\n"
+
+#~| msgid "Pizzas"
+#~ msgid "\tPizzas: {}"
+#~ msgstr "Pizzas: {}"
+
+#~| msgid "Comments"
+#~ msgid "\tComments:\n"
+#~ msgstr "Comentarios:\n"
+
+#~ msgid "surname"
+#~ msgstr "apellido"
+
+#~ msgid "street"
+#~ msgstr "calle"
+
+#~ msgid "postal code"
+#~ msgstr "código postal"
+
+#~ msgid "telephone number"
+#~ msgstr "número de teléfono"
+
+#~ msgid "Language"
+#~ msgstr "Idioma"
 
 #~ msgid "Postal_code"
 #~ msgstr "Codigo_Postal"

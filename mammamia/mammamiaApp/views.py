@@ -3,6 +3,8 @@ from .models import *
 from django.views.generic import *
 from django.core.mail import send_mail, send_mass_mail
 from mammamia.settings import EMAIL_HOST_USER
+from django.utils.translation import gettext_lazy as _
+from time import time
 
 
 # Vistas basadas en funciones
@@ -127,26 +129,59 @@ class DetalleIngrediente(DetailView):
     template_name = "detalleIngrediente.html"
     context_object_name = "ingrediente"
 
-
-def calcularPrecio(post):
+#Funcion para calcular el precio
+def pizzasPedidas(post):
     lista_p = get_list_or_404(Pizza)
 
-    #for (pizza in lista_p):
+    pTotal = 0
+    l_pedidas = []
+    l_cant = []
 
+    for pizza in lista_p:
+        nombre = 'q-'+pizza.nombre.replace(' ','').lower()
+        cant = post.get(nombre,'')
+        if cant!='' and int(cant)>0 :
+            cant = int(cant)
+            l_pedidas.append('{} (+{}€)'.format(pizza.nombre, pizza.masa.supPrecio))
+            l_cant.append(cant)
+            pTotal += cant * pizza.precio + pizza.masa.supPrecio
 
-    return 100
+    dirPedido={
+        'lista_pedida': l_pedidas,
+        'lista_cant': l_cant,
+        'precio': pTotal
+    }
 
-def correoUsuario(post):
+    return dirPedido
 
-    subject = 'Tu pedido en MammaMia ha sido recibido'
-    precio=calcularPrecio(post)
-    message = 'Hola {} {}.\nTu pedido se ha recibido correctamente.\nHa costado: {}€\nSe le enviarán el {} a esta dirección: {} con cod.postal: {}\nSi hay cualquier problema se le contactará a este mismo correo.'.format(
-        post.get('contact_name',''),
-        post.get('contact_surname',''),
-        str(precio),
-        str(post.get('hyt','')), #faltaria formatear la hora
-        post.get('contact_street',''),
-        str(post.get('contact_pCode',''))
+def listaPedidasToStr(lsPizzas, lsCants):
+    str = "\n"
+    for i in range(0,len(lsPizzas)):
+
+        str+='\t{} {}.\n'.format(lsCants[i], lsPizzas[i])
+
+    return str
+def correoUsuario(post, numPedido):
+
+    subject = 'Your MammaMia order has been received. N:{}'.format(numPedido)
+
+    dirPedido=pizzasPedidas(post)
+    datePart = str(post.get('hyt','')).split('T')
+
+    message = (_('Hello {} {}.\n')+
+        _('Your order has been successfully received.\n')+
+        _('The order contains: {}')+
+        _('The total cost of the order was: {}€\n')+
+        _('They will be sent on {} at {} to this address: {} with postal code: {}.\n')+
+        _('If there are any problems you will be contacted at this same email address.')).format(
+            post.get('contact_name',''),
+            post.get('contact_surname',''),
+            listaPedidasToStr(dirPedido['lista_pedida'], dirPedido['lista_cant']),
+            str(dirPedido['precio']),
+            datePart[0],
+            datePart[1],
+            post.get('contact_street',''),
+            str(post.get('contact_pCode',''))
     )
     recepient = post.get('contact_email','')
 
@@ -158,9 +193,35 @@ def correoUsuario(post):
 
     return dir
 
-def correoEmpresa(post):
-    subject='A order has been placed'
-    message='This a test message for myself'
+def correoEmpresa(post, numPedido):
+
+    subject='A new order has been placed. N:{}'.format(numPedido)
+
+    dirPedido=pizzasPedidas(post)
+    datePart = str(post.get('hyt','')).split('T')
+
+    message = ('NEW ORDER.\n'+
+        'Order:\n'+
+        '\tPizzas: {}'+
+        '\tPrice: {}€\n'+
+        'Necessary order information:\n'+
+        '\tAddress: {} with postal code: {}\n'+
+        '\tDate and time:{} at {}\n'+
+        'Additional information:\n'+
+        '\tName: {} {}\n'+
+        '\tComments:\n'+
+        '\t\t{}').format(
+            listaPedidasToStr(dirPedido['lista_pedida'], dirPedido['lista_cant']),
+            str(dirPedido['precio']),
+            post.get('contact_street',''),
+            str(post.get('contact_pCode','')),
+            datePart[0],
+            datePart[1],
+            post.get('contact_name',''),
+            post.get('contact_surname',''),
+            post.get('contact_message','')
+    )
+
     recepient = EMAIL_HOST_USER
 
     dir = {
@@ -173,12 +234,14 @@ def correoEmpresa(post):
 
 def pedido(request):
 
-    lista_p = get_list_or_404(Pizza)
+
     #form
     if request.method == 'POST':
 
-        dirU = correoUsuario(request.POST)
-        dirE = correoEmpresa(request.POST)
+        numPedido = int(time())
+
+        dirU = correoUsuario(request.POST,numPedido)
+        dirE = correoEmpresa(request.POST,numPedido)
 
         datatuple = (
             (dirU['subject'], dirU['message'], EMAIL_HOST_USER, [dirU['recepient']]),
@@ -189,6 +252,7 @@ def pedido(request):
 
         return render(request, 'success.html', {'recepient': dirU['recepient']})
 
+    lista_p = get_list_or_404(Pizza)
     context = {
         'lista_p': lista_p,
     }
