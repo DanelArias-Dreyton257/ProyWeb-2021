@@ -92,25 +92,25 @@
                             <h4>Teléfono</h4>
                         </div>
                     </div>
-                    <div v-if="newContacts.length > 0">
-                        <div v-for="item in newContacts" v-bind:key="item.id" class="row">
+                    <div v-if="contactosPizza.length > 0">
+                        <div v-for="item in contactosPizza" v-bind:key="item.id" class="row">
                             <div class="col-xs-4">
-                                <p>{{item.data.name}}</p>
+                                <p>{{item.data.nombre}}</p>
                             </div>
                             <div class="col-xs-4">
                                 <p>{{item.data.email}}</p>
                             </div>
                             <div class="col-xs-3">
-                                <p>{{item.data.phoneNumber}}</p>
+                                <p>{{item.data.numTelefono}}</p>
                             </div>
                             <div class="col-xs-1">
-                                <button @click="removeContact(item.id)" class="btn btn-danger btn-sm"><span
+                                <button @click="removerContacto(item.id)" class="btn btn-danger btn-sm"><span
                                         class="glyphicon glyphicon-remove"></span></button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div v-if="newContacts.length === 0">
+                <div v-if="contactosPizza.length === 0">
                     <div class="row">
                         <div class="col-xs-12">
                             <p>No se ha encontrado ningún contacto.</p>
@@ -125,9 +125,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <button v-if="state ==='default'" @click="changeState('edit')"
+                        <button v-if="state ==='default'" @click="cambiarEstado('edit')"
                             class="btn btn-success btn-lg activate">Añadir Contacto</button>
-                        <button v-else @click="changeState('default')"
+                        <button v-else @click="cambiarEstado('default')"
                             class="btn btn-success btn-lg deactivate">Desactivar edición</button>
                     </div>
                 </div>
@@ -147,8 +147,8 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label>Nombre</label>
-                                    <input v-model='name' type="text" class="form-control" placeholder="Nombre"
-                                        id="name">
+                                    <input v-model='nombre' type="text" class="form-control" placeholder="Nombre"
+                                        id="nombre">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label>Teléfono</label>
-                                    <input v-model='phoneNumber' type="tel" class="form-control"
+                                    <input v-model='numTelefono' type="tel" class="form-control"
                                         placeholder="Número de teléfono" id="phone">
                                     <p class="help-block text-danger"></p>
                                 </div>
@@ -172,7 +172,7 @@
                             <div id="success"></div>
                             <div class="row">
                                 <div class="form-group col-xs-12">
-                                    <button @click="saveContact" type="button"
+                                    <button @click="guardarContacto" type="button"
                                         class="btn btn-success btn-lg">Añadir</button>
                                 </div>
                             </div>
@@ -262,7 +262,7 @@
     <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const Config = {
+        const Configuracion = {
             apiKey: "AIzaSyCPb9XTImBQPysdOR5ntsFqhkZ4qAwSrzU",
             authDomain: "focus-chain-286417.firebaseapp.com",
             projectId: "focus-chain-286417",
@@ -272,43 +272,44 @@
             measurementId: "G-NB2P3E9EY6"
         };
         // Initialize Firebase
-        firebase.initializeApp(Config);
+        firebase.initializeApp(Configuracion);
         const db = firebase.firestore()
-        const coleccion = db.collection('newContacts')
+        const coleccion = db.collection('contactosPizza')
         new Vue({
         el:'#app',
         data:{
             state:'default',
-            name: null,
+            nombre: null,
             email: null,
-            phoneNumber: null,
-            newContacts: []
+            numTelefono: null,
+            contactosPizza: []
         }, 
         mounted(){
-          this.newContacts = []
-          coleccion.get().then((r) => r.docs.map((item) => this.newContacts.push({id:item.id, data:item.data()})))
+          this.contactosPizza = []
+          coleccion.get().then((r) => r.docs.map((item) => this.contactosPizza.push({id:item.id, data:item.data()})))
         }, 
         computed:{
-          reversedContacts() {
-                 return this.contacts.slice(0).reverse();
+            //¿Quitar?
+            revertirContactos() {
+                return this.contacts.slice(0).reverse();
           }
         },       
         methods:{
-          saveContact(){
-            coleccion.add({
-              name:this.name,
-              email: this.email,
-              phoneNumber:this.phoneNumber
-            }).then(() => this.$mount())
-          },
-          removeContact(id){
-            coleccion.doc(id).delete().then(()=>this.$mount())
-          },
-          changeState: function(newState){
-          this.state = newState;
+            guardarContacto(){
+                coleccion.add({
+                    nombre:this.nombre,
+                    email: this.email,
+                    numTelefono:this.numTelefono
+                }).then(() => this.$mount())
+            },
+            removerContacto(id){
+                coleccion.doc(id).delete().then(()=>this.$mount())
+            },
+            cambiarEstado: function(newState){
+                this.state = newState;
+            }
         }
-        }
-      })
+    })
     </script>
 </body>
 
