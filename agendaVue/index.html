@@ -289,10 +289,6 @@
           coleccion.get().then((r) => r.docs.map((item) => this.newContacts.push({id:item.id, data:item.data()})))
         }, 
         computed:{
-            //¿Quitar?
-            revertirContactos() {
-                return this.contacts.slice(0).reverse();
-          }
         },       
         methods:{
             guardarContacto(){
