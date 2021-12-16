@@ -92,8 +92,8 @@
                             <h4>Teléfono</h4>
                         </div>
                     </div>
-                    <div v-if="contactosPizza.length > 0">
-                        <div v-for="item in contactosPizza" v-bind:key="item.id" class="row">
+                    <div v-if="newContacts.length > 0">
+                        <div v-for="item in newContacts" v-bind:key="item.id" class="row">
                             <div class="col-xs-4">
                                 <p>{{item.data.nombre}}</p>
                             </div>
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="contactosPizza.length === 0">
+                <div v-if="newContacts.length === 0">
                     <div class="row">
                         <div class="col-xs-12">
                             <p>No se ha encontrado ningún contacto.</p>
@@ -274,7 +274,7 @@
         // Initialize Firebase
         firebase.initializeApp(Configuracion);
         const db = firebase.firestore()
-        const coleccion = db.collection('contactosPizza')
+        const coleccion = db.collection('newContacts')
         new Vue({
         el:'#app',
         data:{
@@ -282,11 +282,11 @@
             nombre: null,
             email: null,
             numTelefono: null,
-            contactosPizza: []
+            newContacts: []
         }, 
         mounted(){
-          this.contactosPizza = []
-          coleccion.get().then((r) => r.docs.map((item) => this.contactosPizza.push({id:item.id, data:item.data()})))
+          this.newContacts = []
+          coleccion.get().then((r) => r.docs.map((item) => this.newContacts.push({id:item.id, data:item.data()})))
         }, 
         computed:{
             //¿Quitar?
