@@ -1,7 +1,7 @@
 {% load static %}
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="{ % trans "en" %}">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -92,7 +92,7 @@
 
                     <select class="form-control tm-select nav-item" onchange="location = this.value">
                       {% for language in languages %}
-                        <option  class ="nav-link" value="/{{ language.code }}{{request.path|slice:'3:'}}" {% if language.code == CURRENT_LANGUAGE %} selected="yes" {% endif %}>
+                        <option  class ="nav-link" value="/{{ language.code }}{{request.path|slice:'3:'}}" {% if language.code == CURRENT_LANGUAGE %} selected {% endif %}>
                             {{ language.name_local }}
                         </option>
                       {% endfor %}

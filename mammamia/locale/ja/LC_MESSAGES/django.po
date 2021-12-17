@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-15 22:22+0100\n"
+"POT-Creation-Date: 2021-12-17 08:33+0100\n"
 "PO-Revision-Date: 2021-12-15 22:24+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
@@ -48,32 +48,32 @@ msgstr "kcal"
 msgid "price"
 msgstr "価格"
 
-#: .\mammamiaApp\templates\base.html:71
+#: .\mammamiaApp\templates\base.html:73
 msgid "Home"
 msgstr "ホーム"
 
-#: .\mammamiaApp\templates\base.html:74
+#: .\mammamiaApp\templates\base.html:76
 #: .\mammamiaApp\templates\detalleIngrediente.html:19
 #: .\mammamiaApp\templates\detalleMasa.html:20
 #: .\mammamiaApp\templates\listaPizzas.html:5
 msgid "Pizzas"
 msgstr "ピッツァ"
 
-#: .\mammamiaApp\templates\base.html:77
+#: .\mammamiaApp\templates\base.html:79
 msgid "Doughs"
 msgstr "パン生地"
 
-#: .\mammamiaApp\templates\base.html:80
+#: .\mammamiaApp\templates\base.html:82
 #: .\mammamiaApp\templates\detallePizza.html:19
 #: .\mammamiaApp\templates\listaIngredientes.html:5
 msgid "Ingredients"
 msgstr "材料"
 
-#: .\mammamiaApp\templates\base.html:83
+#: .\mammamiaApp\templates\base.html:85
 msgid "Orders"
 msgstr "注文"
 
-#: .\mammamiaApp\templates\base.html:114
+#: .\mammamiaApp\templates\base.html:116
 msgid "Featured pizzas"
 msgstr "おすすめのピッツァ"
 
@@ -285,7 +285,6 @@ msgid "Email sent to:"
 msgstr "送信先メールアドレス:"
 
 #: .\mammamiaApp\views.py:166
-#| msgid "Your order has been received."
 msgid "Your MammaMia order has been received."
 msgstr "MammaMiaの注文を受け取りました."
 
@@ -308,7 +307,8 @@ msgstr "注文の合計金額は{}ユーロでした\n"
 #: .\mammamiaApp\views.py:175
 msgid ""
 "They will be sent on {} at {} to this address: {} with postal code: {}.\n"
-msgstr "これらは{}の{}でこのアドレスに送信されます: {}の住所です。郵便番号{}で.\n"
+msgstr ""
+"これらは{}の{}でこのアドレスに送信されます: {}の住所です。郵便番号{}で.\n"
 
 #: .\mammamiaApp\views.py:176
 msgid ""

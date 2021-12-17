@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-15 22:22+0100\n"
-"PO-Revision-Date: 2021-12-15 22:22+0000\n"
+"POT-Creation-Date: 2021-12-17 08:33+0100\n"
+"PO-Revision-Date: 2021-12-17 09:25+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -48,32 +48,32 @@ msgstr "kcal"
 msgid "price"
 msgstr "precio"
 
-#: .\mammamiaApp\templates\base.html:71
+#: .\mammamiaApp\templates\base.html:73
 msgid "Home"
 msgstr "Inicio"
 
-#: .\mammamiaApp\templates\base.html:74
+#: .\mammamiaApp\templates\base.html:76
 #: .\mammamiaApp\templates\detalleIngrediente.html:19
 #: .\mammamiaApp\templates\detalleMasa.html:20
 #: .\mammamiaApp\templates\listaPizzas.html:5
 msgid "Pizzas"
 msgstr "Pizzas"
 
-#: .\mammamiaApp\templates\base.html:77
+#: .\mammamiaApp\templates\base.html:79
 msgid "Doughs"
 msgstr "Masas"
 
-#: .\mammamiaApp\templates\base.html:80
+#: .\mammamiaApp\templates\base.html:82
 #: .\mammamiaApp\templates\detallePizza.html:19
 #: .\mammamiaApp\templates\listaIngredientes.html:5
 msgid "Ingredients"
 msgstr "Ingredientes"
 
-#: .\mammamiaApp\templates\base.html:83
+#: .\mammamiaApp\templates\base.html:85
 msgid "Orders"
 msgstr "Pedidos"
 
-#: .\mammamiaApp\templates\base.html:114
+#: .\mammamiaApp\templates\base.html:116
 msgid "Featured pizzas"
 msgstr "Pizzas destacadas"
 
@@ -200,7 +200,7 @@ msgstr "Apellido"
 
 #: .\mammamiaApp\templates\pedido.html:40
 msgid "E-mail"
-msgstr "Correo electrónico"
+msgstr "Correo-electrónico"
 
 #: .\mammamiaApp\templates\pedido.html:43
 msgid "Street"
@@ -208,7 +208,7 @@ msgstr "Calle"
 
 #: .\mammamiaApp\templates\pedido.html:45
 msgid "Postal code"
-msgstr "Código postal"
+msgstr "Código-postal"
 
 #: .\mammamiaApp\templates\pedido.html:56
 msgid "Select the day and time you want to receive your pizza"
@@ -285,7 +285,6 @@ msgid "Email sent to:"
 msgstr "Correo enviado a:"
 
 #: .\mammamiaApp\views.py:166
-#| msgid "Your order has been received."
 msgid "Your MammaMia order has been received."
 msgstr "Tu pedido MammaMia ha sido recibido."
 

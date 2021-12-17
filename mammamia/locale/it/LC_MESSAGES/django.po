@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-15 22:22+0100\n"
-"PO-Revision-Date: 2021-12-15 22:23+0000\n"
+"POT-Creation-Date: 2021-12-17 08:33+0100\n"
+"PO-Revision-Date: 2021-12-17 09:25+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -48,32 +48,32 @@ msgstr "kcal"
 msgid "price"
 msgstr "prezzo"
 
-#: .\mammamiaApp\templates\base.html:71
+#: .\mammamiaApp\templates\base.html:73
 msgid "Home"
 msgstr "Inizio"
 
-#: .\mammamiaApp\templates\base.html:74
+#: .\mammamiaApp\templates\base.html:76
 #: .\mammamiaApp\templates\detalleIngrediente.html:19
 #: .\mammamiaApp\templates\detalleMasa.html:20
 #: .\mammamiaApp\templates\listaPizzas.html:5
 msgid "Pizzas"
 msgstr "Pizze"
 
-#: .\mammamiaApp\templates\base.html:77
+#: .\mammamiaApp\templates\base.html:79
 msgid "Doughs"
 msgstr "Impasto"
 
-#: .\mammamiaApp\templates\base.html:80
+#: .\mammamiaApp\templates\base.html:82
 #: .\mammamiaApp\templates\detallePizza.html:19
 #: .\mammamiaApp\templates\listaIngredientes.html:5
 msgid "Ingredients"
 msgstr "Ingredienti"
 
-#: .\mammamiaApp\templates\base.html:83
+#: .\mammamiaApp\templates\base.html:85
 msgid "Orders"
 msgstr "Ordine"
 
-#: .\mammamiaApp\templates\base.html:114
+#: .\mammamiaApp\templates\base.html:116
 msgid "Featured pizzas"
 msgstr "Pizze in evidenza"
 
@@ -208,7 +208,7 @@ msgstr "Indirizzo"
 
 #: .\mammamiaApp\templates\pedido.html:45
 msgid "Postal code"
-msgstr "Codice postale"
+msgstr "Codice-postale"
 
 #: .\mammamiaApp\templates\pedido.html:56
 msgid "Select the day and time you want to receive your pizza"
@@ -285,7 +285,6 @@ msgid "Email sent to:"
 msgstr "Email inviata a:"
 
 #: .\mammamiaApp\views.py:166
-#| msgid "Your order has been received."
 msgid "Your MammaMia order has been received."
 msgstr "Il tuo ordine MammaMia è stato ricevuto."
 

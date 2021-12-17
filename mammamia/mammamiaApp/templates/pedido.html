@@ -28,39 +28,36 @@ Mamma Mia
               </div>
 
                 <div class="form-group">
-                  <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder={% trans "Name" %}
-                    required="">
+                  <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder={% trans "Name" %}  required="">
                 </div>
                 <div class="form-group">
-                  <input type="text" id="contact_surname" name="contact_surname" class="form-control"
-                    placeholder={% trans "Surname" %} required="">
+                  <input type="text" id="contact_surname" name="contact_surname" class="form-control" placeholder={% trans "Surname" %} required="">
                 </div>
                 <div class="form-group">
-                  <input type="text" id="contact_email" name="contact_email" class="form-control"
-                    placeholder={% trans "E-mail" %} required="">
+                  <input type="text" id="contact_email" name="contact_email" class="form-control" placeholder={% trans "E-mail" %} required="">
                 </div>
                 <div class="form-group">
                   <input type="text" id="contact_street" name="contact_street" class="form-control" placeholder={% trans "Street" %}
                     required=""><br>
-                  <input id="contact_pCode" name="contact_pCode" class="form-control" placeholder = {% trans "Postal code" %} type="number" id="pCode" class="form-control" name="pCode" max="99999">
+                  <input id="contact_pCode" name="contact_pCode" placeholder = {% trans "Postal code" %} type="number" class="form-control" max="99999">
                 </div>
                 <div class="form-group">
                   {% for pizza in lista_p|dictsort:"nombre" %}
-                  <input type="number" for="{{pizza.nombre|lower|cut:" "}}" id="quantity" name="q-{{pizza.nombre|lower|cut:" "}}" min="1" max="10">
-                  <label for="{{pizza.nombre|lower|cut:" "}}"> <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}}</a></label><br>
+                  <input type="number" id="q-{{pizza.nombre|lower|cut:" "}}" name="q-{{pizza.nombre|lower|cut:" "}}" min="1" max="10">
+                  <label for="q-{{pizza.nombre|lower|cut:" "}}"> <a href="{% url 'detalle_pizza' pizza.id %}">{{pizza.nombre}}</a></label><br>
                   {% empty %}
                   <p>{% trans "No pizzas were found." %}</p>
                   {% endfor %}<br>
                 </div>
                 <div class="form-group">
                   <label for="hyt" class="form-control">{% trans "Select the day and time you want to receive your pizza" %}</label>
-                  <input type="datetime-local" class="form-control" id="hyt" name="hyt"required=""> <br>
+                  <input type="datetime-local" class="form-control" id="hyt" name="hyt" required=""> <br>
                   <!--label  class="form-control" >{% trans "Total price" %}:  €</label-->
                   <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder={% trans "Comments" %} ></textarea>
                 </div>
                 {% csrf_token %}
 
-                <button type="submit" class="btn btn-primary tm-btn-primary" on-click=enviado({% trans "Your order has been received." %},contact_name, 5 , contact_street)>{% trans "Send Order Now" %}</button>
+                <button type="submit" class="btn btn-primary tm-btn-primary" >{% trans "Send Order Now" %}</button>
 
               </form>
             </div>
