@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-17 08:33+0100\n"
-"PO-Revision-Date: 2021-12-17 09:25+0000\n"
+"POT-Creation-Date: 2021-12-22 13:21+0100\n"
+"PO-Revision-Date: 2021-12-22 13:23+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -126,7 +126,7 @@ msgid "Discover what pizzas we have with this dough."
 msgstr "Scopri quali pizze abbiamo con questo impasto."
 
 #: .\mammamiaApp\templates\detalleMasa.html:36
-#: .\mammamiaApp\templates\pedido.html:52
+#: .\mammamiaApp\templates\pedido.html:50
 msgid "No pizzas were found."
 msgstr "Non si sono trovate pizze."
 
@@ -194,68 +194,68 @@ msgstr "Iniziamo il tuo ordine!"
 msgid "Name"
 msgstr "Nome"
 
-#: .\mammamiaApp\templates\pedido.html:36
+#: .\mammamiaApp\templates\pedido.html:34
 msgid "Surname"
 msgstr "Gognome"
 
-#: .\mammamiaApp\templates\pedido.html:40
+#: .\mammamiaApp\templates\pedido.html:37
 msgid "E-mail"
 msgstr "E-mail"
 
-#: .\mammamiaApp\templates\pedido.html:43
+#: .\mammamiaApp\templates\pedido.html:40
 msgid "Street"
 msgstr "Indirizzo"
 
-#: .\mammamiaApp\templates\pedido.html:45
+#: .\mammamiaApp\templates\pedido.html:42
 msgid "Postal code"
 msgstr "Codice-postale"
 
-#: .\mammamiaApp\templates\pedido.html:56
+#: .\mammamiaApp\templates\pedido.html:45
+msgid "Select how many of each pizza are you ordering."
+msgstr "Seleziona quanti di ogni pizza stai ordinando."
+
+#: .\mammamiaApp\templates\pedido.html:54
 msgid "Select the day and time you want to receive your pizza"
 msgstr "Seleziona il giorno e l'ora in cui vuoi ricevere la tua pizza"
 
-#: .\mammamiaApp\templates\pedido.html:58
+#: .\mammamiaApp\templates\pedido.html:56
 msgid "Total price"
 msgstr "Prezzo totale"
 
-#: .\mammamiaApp\templates\pedido.html:59
+#: .\mammamiaApp\templates\pedido.html:57
 msgid "Comments"
 msgstr "Commenti"
 
-#: .\mammamiaApp\templates\pedido.html:63
-msgid "Your order has been received."
-msgstr "Il suo ordine è stato ricevuto."
-
-#: .\mammamiaApp\templates\pedido.html:63
+#: .\mammamiaApp\templates\pedido.html:61
 msgid "Send Order Now"
 msgstr "Invia l'ordine ora"
 
-#: .\mammamiaApp\templates\pedido.html:76
+#: .\mammamiaApp\templates\pedido.html:74
 #: .\mammamiaApp\templates\portada.html:46
 msgid "Our Pizzas"
 msgstr "Le nostre pizze"
 
-#: .\mammamiaApp\templates\pedido.html:77
+#: .\mammamiaApp\templates\pedido.html:75
 #: .\mammamiaApp\templates\portada.html:47
 msgid "In this places of the world"
 msgstr "In questi luoghi del mondo"
 
-#: .\mammamiaApp\templates\pedido.html:83
+#: .\mammamiaApp\templates\pedido.html:81
 #: .\mammamiaApp\templates\portada.html:53
 msgid "Europe"
 msgstr "Europa"
 
-#: .\mammamiaApp\templates\pedido.html:89
+#: .\mammamiaApp\templates\pedido.html:87
 #: .\mammamiaApp\templates\portada.html:59
 msgid "Asia"
 msgstr "Asia"
 
-#: .\mammamiaApp\templates\pedido.html:95
+#: .\mammamiaApp\templates\pedido.html:93
 #: .\mammamiaApp\templates\portada.html:65
 msgid "Africa"
 msgstr "Africa"
 
-#: .\mammamiaApp\templates\pedido.html:101
+#: .\mammamiaApp\templates\pedido.html:99
 #: .\mammamiaApp\templates\portada.html:71
 msgid "South America"
 msgstr "Sud America"
@@ -284,37 +284,41 @@ msgstr "Controlla la tua email per ulteriori dettagli."
 msgid "Email sent to:"
 msgstr "Email inviata a:"
 
-#: .\mammamiaApp\views.py:166
+#: .\mammamiaApp\views.py:169
 msgid "Your MammaMia order has been received."
 msgstr "Il tuo ordine MammaMia è stato ricevuto."
 
-#: .\mammamiaApp\views.py:171
+#: .\mammamiaApp\views.py:174
 msgid "Hello {} {}.\n"
 msgstr "Ciao {} {}.\n"
 
-#: .\mammamiaApp\views.py:172
+#: .\mammamiaApp\views.py:175
 msgid "Your order has been successfully received.\n"
 msgstr "Il suo ordine è stato ricevuto con successo.\n"
 
-#: .\mammamiaApp\views.py:173
+#: .\mammamiaApp\views.py:176
 msgid "The order contains: {}"
 msgstr "L'ordine contiene: {}"
 
-#: .\mammamiaApp\views.py:174
+#: .\mammamiaApp\views.py:177
 msgid "The total cost of the order was: {}€\n"
 msgstr "Il costo totale dell'ordine era: {}€\n"
 
-#: .\mammamiaApp\views.py:175
+#: .\mammamiaApp\views.py:178
 msgid ""
 "They will be sent on {} at {} to this address: {} with postal code: {}.\n"
 msgstr ""
 "Saranno inviati il {} a {} a questo indirizzo: {} con codice postale: {}.\n"
 
-#: .\mammamiaApp\views.py:176
+#: .\mammamiaApp\views.py:179
 msgid ""
 "If there are any problems you will be contacted at this same email address."
 msgstr ""
 "Se ci sono problemi, sarete contattati a questo stesso indirizzo e-mail."
+
+#: .\mammamiaApp\views.py:262
+msgid "The order was not completed, please try again"
+msgstr "L'ordine non è stato completato, per favore riprova"
 
 #: .\mammamia\settings.py:125
 msgid "English"
@@ -335,6 +339,9 @@ msgstr "Giapponese"
 #: .\mammamia\urls.py:22
 msgid "admin/"
 msgstr ""
+
+#~ msgid "Your order has been received."
+#~ msgstr "Il suo ordine è stato ricevuto."
 
 #, fuzzy
 #~ msgid "Order:\n"

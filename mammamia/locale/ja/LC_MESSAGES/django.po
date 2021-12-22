@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-17 08:33+0100\n"
-"PO-Revision-Date: 2021-12-15 22:24+0000\n"
+"POT-Creation-Date: 2021-12-22 13:21+0100\n"
+"PO-Revision-Date: 2021-12-22 13:24+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -126,7 +126,7 @@ msgid "Discover what pizzas we have with this dough."
 msgstr "この生地を使ってどんなピザができるのか見てみましょう."
 
 #: .\mammamiaApp\templates\detalleMasa.html:36
-#: .\mammamiaApp\templates\pedido.html:52
+#: .\mammamiaApp\templates\pedido.html:50
 msgid "No pizzas were found."
 msgstr "ピザは見つかりませんでした."
 
@@ -194,68 +194,68 @@ msgstr "注文を始めましょう！"
 msgid "Name"
 msgstr "名前"
 
-#: .\mammamiaApp\templates\pedido.html:36
+#: .\mammamiaApp\templates\pedido.html:34
 msgid "Surname"
 msgstr "姓"
 
-#: .\mammamiaApp\templates\pedido.html:40
+#: .\mammamiaApp\templates\pedido.html:37
 msgid "E-mail"
 msgstr "Eメール"
 
-#: .\mammamiaApp\templates\pedido.html:43
+#: .\mammamiaApp\templates\pedido.html:40
 msgid "Street"
 msgstr "住所"
 
-#: .\mammamiaApp\templates\pedido.html:45
+#: .\mammamiaApp\templates\pedido.html:42
 msgid "Postal code"
 msgstr "郵便番号"
 
-#: .\mammamiaApp\templates\pedido.html:56
+#: .\mammamiaApp\templates\pedido.html:45
+msgid "Select how many of each pizza are you ordering."
+msgstr "各ピザを何枚注文するか選択してください."
+
+#: .\mammamiaApp\templates\pedido.html:54
 msgid "Select the day and time you want to receive your pizza"
 msgstr "ピザを受け取りたい日時を選択してください"
 
-#: .\mammamiaApp\templates\pedido.html:58
+#: .\mammamiaApp\templates\pedido.html:56
 msgid "Total price"
 msgstr "合計金額"
 
-#: .\mammamiaApp\templates\pedido.html:59
+#: .\mammamiaApp\templates\pedido.html:57
 msgid "Comments"
 msgstr "付注"
 
-#: .\mammamiaApp\templates\pedido.html:63
-msgid "Your order has been received."
-msgstr "ご注文は受信されました."
-
-#: .\mammamiaApp\templates\pedido.html:63
+#: .\mammamiaApp\templates\pedido.html:61
 msgid "Send Order Now"
 msgstr "今すぐ注文する"
 
-#: .\mammamiaApp\templates\pedido.html:76
+#: .\mammamiaApp\templates\pedido.html:74
 #: .\mammamiaApp\templates\portada.html:46
 msgid "Our Pizzas"
 msgstr "私たちのピザ"
 
-#: .\mammamiaApp\templates\pedido.html:77
+#: .\mammamiaApp\templates\pedido.html:75
 #: .\mammamiaApp\templates\portada.html:47
 msgid "In this places of the world"
 msgstr "世界のこの場所で"
 
-#: .\mammamiaApp\templates\pedido.html:83
+#: .\mammamiaApp\templates\pedido.html:81
 #: .\mammamiaApp\templates\portada.html:53
 msgid "Europe"
 msgstr "ヨーロッパ"
 
-#: .\mammamiaApp\templates\pedido.html:89
+#: .\mammamiaApp\templates\pedido.html:87
 #: .\mammamiaApp\templates\portada.html:59
 msgid "Asia"
 msgstr "アジア"
 
-#: .\mammamiaApp\templates\pedido.html:95
+#: .\mammamiaApp\templates\pedido.html:93
 #: .\mammamiaApp\templates\portada.html:65
 msgid "Africa"
 msgstr "アフリカ"
 
-#: .\mammamiaApp\templates\pedido.html:101
+#: .\mammamiaApp\templates\pedido.html:99
 #: .\mammamiaApp\templates\portada.html:71
 msgid "South America"
 msgstr "南アメリカ"
@@ -284,36 +284,39 @@ msgstr "詳しくはメールでご確認ください."
 msgid "Email sent to:"
 msgstr "送信先メールアドレス:"
 
-#: .\mammamiaApp\views.py:166
+#: .\mammamiaApp\views.py:169
 msgid "Your MammaMia order has been received."
 msgstr "MammaMiaの注文を受け取りました."
 
-#: .\mammamiaApp\views.py:171
+#: .\mammamiaApp\views.py:174
 msgid "Hello {} {}.\n"
 msgstr "こんにちは、{}・{}\n"
 
-#: .\mammamiaApp\views.py:172
+#: .\mammamiaApp\views.py:175
 msgid "Your order has been successfully received.\n"
 msgstr "ご注文は正常に受信されています。\n"
 
-#: .\mammamiaApp\views.py:173
+#: .\mammamiaApp\views.py:176
 msgid "The order contains: {}"
 msgstr "注文には{}が含まれています"
 
-#: .\mammamiaApp\views.py:174
+#: .\mammamiaApp\views.py:177
 msgid "The total cost of the order was: {}€\n"
 msgstr "注文の合計金額は{}ユーロでした\n"
 
-#: .\mammamiaApp\views.py:175
+#: .\mammamiaApp\views.py:178
 msgid ""
 "They will be sent on {} at {} to this address: {} with postal code: {}.\n"
-msgstr ""
-"これらは{}の{}でこのアドレスに送信されます: {}の住所です。郵便番号{}で.\n"
+msgstr "これらは{}の{}でこのアドレスに送信されます: {}の住所です。郵便番号{}で.\n"
 
-#: .\mammamiaApp\views.py:176
+#: .\mammamiaApp\views.py:179
 msgid ""
 "If there are any problems you will be contacted at this same email address."
 msgstr "問題が発生した場合は、この同じメールアドレスに連絡します."
+
+#: .\mammamiaApp\views.py:262
+msgid "The order was not completed, please try again"
+msgstr "注文が完了しませんでした。もう一度やり直してください"
 
 #: .\mammamia\settings.py:125
 msgid "English"
@@ -334,6 +337,9 @@ msgstr "日本語"
 #: .\mammamia\urls.py:22
 msgid "admin/"
 msgstr ""
+
+#~ msgid "Your order has been received."
+#~ msgstr "ご注文は受信されました."
 
 #, fuzzy
 #~ msgid "Order:\n"

@@ -5,6 +5,7 @@ from django.core.mail import send_mail, send_mass_mail
 from mammamia.settings import EMAIL_HOST_USER
 from django.utils.translation import gettext_lazy as _
 from time import time
+from django.http import HttpResponseBadRequest
 
 
 # Vistas basadas en funciones
@@ -129,7 +130,7 @@ class DetalleIngrediente(DetailView):
     template_name = "detalleIngrediente.html"
     context_object_name = "ingrediente"
 
-#Funcion para calcular el precio
+#Funcion para averiguar cuales han sido las pizzas pedidas
 def pizzasPedidas(post):
     lista_p = get_list_or_404(Pizza)
 
@@ -153,7 +154,7 @@ def pizzasPedidas(post):
     }
 
     return dirPedido
-
+#genera un string con listando las pizzas pedidas
 def listaPedidasToStr(lsPizzas, lsCants):
     str = "\n"
     for i in range(0,len(lsPizzas)):
@@ -161,6 +162,8 @@ def listaPedidasToStr(lsPizzas, lsCants):
         str+='\t{} {}.\n'.format(lsCants[i], lsPizzas[i])
 
     return str
+
+#genera el correo para el usuario
 def correoUsuario(post, numPedido):
 
     subject = _('Your MammaMia order has been received.')+' N:{}'.format(numPedido)
@@ -193,6 +196,7 @@ def correoUsuario(post, numPedido):
 
     return dir
 
+#genera el correo para la empresa
 def correoEmpresa(post, numPedido):
 
     subject='A new order has been placed. N:{}'.format(numPedido)
@@ -232,29 +236,31 @@ def correoEmpresa(post, numPedido):
 
     return dir
 
+#Vista para la creacion del pedido
 def pedido(request):
-
-
-    #form
-    if request.method == 'POST':
-
-        numPedido = int(time())
-
-        dirU = correoUsuario(request.POST,numPedido)
-        dirE = correoEmpresa(request.POST,numPedido)
-
-        datatuple = (
-            (dirU['subject'], dirU['message'], EMAIL_HOST_USER, [dirU['recepient']]),
-            (dirE['subject'], dirE['message'], EMAIL_HOST_USER, [dirE['recepient']]),
-        )
-
-        send_mass_mail(datatuple, fail_silently = False)
-
-        return render(request, 'success.html', {'recepient': dirU['recepient']})
 
     lista_p = get_list_or_404(Pizza)
     context = {
         'lista_p': lista_p,
     }
+
+    #form
+    if request.method == 'POST':
+
+        numPedido = int(time())
+        try:
+            dirU = correoUsuario(request.POST,numPedido)
+            dirE = correoEmpresa(request.POST,numPedido)
+
+            datatuple = (
+                (dirU['subject'], dirU['message'], EMAIL_HOST_USER, [dirU['recepient']]),
+                (dirE['subject'], dirE['message'], EMAIL_HOST_USER, [dirE['recepient']]),
+            )
+
+            send_mass_mail(datatuple, fail_silently = False)
+        except:
+            return HttpResponseBadRequest(_('The order was not completed, please try again'))
+        else:
+            return render(request, 'success.html', {'recepient': dirU['recepient']})
 
     return render(request,'pedido.html',context)
